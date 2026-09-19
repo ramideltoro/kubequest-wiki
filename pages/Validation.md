@@ -25,6 +25,10 @@ The real coach was tested through the public Cloudflare hostname using authorize
 
 Both requests completed with model answers rather than fallback text. Cancelling a third stream released the inference slot, and the next question received a complete model answer. The temporary lab was then stopped; no attempts were graded. All six checked application, AI, tunnel, and observability services remained active. After cleanup the host reported approximately 6.7 GiB used and 52 GiB available, with no swap usage. These are single-run observations, not latency or capacity guarantees.
 
+## Visual learning verification
+
+The visual-library suite covers all 38 lesson/mission diagrams plus seven overview routes at both 390 and 1440 pixels (90 route/layout checks). It explores all parts by keyboard, changes comparison states, reads relationship text, checks image loading and label clipping, and audits representative flows with axe. It verifies progress-chart counts and uses explicit UI mocks to confirm diagrams stay hidden in active timed attempts and require a coaching request in independent mode. Official technology symbols are checked against their recorded source hashes. These UI checks do not replace live-cluster qualification.
+
 ## Real lab qualification
 
 The initial deployment exercised every mission in a separate disposable VM. The broken initial state failed complete validation; each authored solution passed all four checks; an incomplete repair failed; and a valid alternative passed.

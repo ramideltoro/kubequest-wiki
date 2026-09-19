@@ -72,6 +72,8 @@ title KubeQuest - runtime components
 package "Browser" {
  component "React router: Foundations / Basics / CKAD" as UI
  component "Browser experiments and local progress" as Sim
+ component "Interactive diagrams and progress charts" as Visuals
+ artifact "Reviewed visual definitions" as VisualContent
  component "Terminal and YAML editor" as Editor
 }
 package "Portal service" {
@@ -90,6 +92,8 @@ node "Disposable KVM guest" {
 component "Existing Ollama / qwen2.5:7b" as Ollama
 UI --> API : HTTPS
 UI --> Sim : local state
+UI --> Visuals : topic and assistance mode
+Visuals --> VisualContent : labeled parts and relationships
 UI ..> Wiki : external documentation link
 Editor --> API : API and WebSocket
 API --> Auth

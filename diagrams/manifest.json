@@ -10,9 +10,9 @@
     },
     {
       "source": "class.puml",
-      "sourceSha256": "fa9f8a5ccef63fb8228da53f280343ad7362aaaa982eb09bb44c5d9a07161ceb",
+      "sourceSha256": "185ac56cfdacfcce2fca2558754a8f2665769b5a704200356bcea321d718d8c6",
       "svg": "class.svg",
-      "svgSha256": "a90e0c672186b339c1fb5f238096370fc1202548c9743cf2493c9baf1844b74c"
+      "svgSha256": "6f0e9f9868ed34fe7b6e8cda2b4362607522b3b8ea6b1ca0fa7212a2980b9279"
     },
     {
       "source": "communication.puml",
@@ -22,9 +22,9 @@
     },
     {
       "source": "component.puml",
-      "sourceSha256": "be9925089c2e6b3081d478965276278cb61e843c3948759ec8ae5a6cb4f78cc5",
+      "sourceSha256": "5383c4f1ffc3e6b1be370edde8f1cfc961d499eff5077907229b34e49797605a",
       "svg": "component.svg",
-      "svgSha256": "b70e1ce2362581f78730114f6cadc4cd0fcb77c76a2d56dc30c30a5c182c6184"
+      "svgSha256": "833a91cc4fafc29b7e435ed681941cbcd5f1fd9c45f5777189715399e8b36d7e"
     },
     {
       "source": "composite-structure.puml",

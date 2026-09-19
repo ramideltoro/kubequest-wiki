@@ -91,6 +91,29 @@ class Mission <<TypeScript type>> {
  starter: string
  solution: string
 }
+class Visual <<TypeScript type>> {
+ title: string
+ summary: string
+ nodes: VisualNode[]
+ edges: VisualEdge[]
+ layout: branch | cycle?
+ contrast: comparison?
+}
+class VisualNode {
+ icon: string
+ label: string
+ note: string
+ detail: string
+}
+class VisualEdge {
+ from: number
+ to: number
+ label: string
+}
+Visual "1" *-- "4" VisualNode
+Visual "1" *-- "0..*" VisualEdge
+Lesson ..> Visual : stable ID
+Mission ..> Visual : assistance view
 class Session <<TypeScript type>> {
  id: string
  missionId: string

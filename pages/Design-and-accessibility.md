@@ -18,6 +18,12 @@ KubeQuest uses a dark amber palette: warm charcoal surfaces, readable ivory text
 
 These tokens are in `src/style.css`. The terminal and YAML syntax theme use matching surfaces and high-contrast syntax colors. Google's approved sign-in button remains a distinct branded control.
 
+## Visual explanations
+
+The [visual learning library](Visual-learning.md) adds 45 reviewed diagrams across every lesson, mission, and major overview. Labeled arrows show relationships, native buttons reveal each part’s role, and optional comparison states explain failures or important distinctions. Narrow layouts use readable part cards and connection rows. Every diagram has a text equivalent and is marked as an example, distinct from observed live resources.
+
+Completion rings and lesson tiles visualize actual progress. A separate bar chart shows CKAD curriculum weights without claiming pilot coverage or exam readiness. Official symbols retain their colors; generic application objects use Lucide.
+
 ## NutsNews-style footer
 
 The footer adapts the actual NutsNews site structure: a compact fixed dark strip, circular Home/Search/Site menu shortcuts, a rounded navigation group and a centered copyright line linking to Rami Del Toro. KubeQuest links lead to Foundations, Basics, CKAD, About, Readme, Privacy and Wiki. The site menu also exposes source and deployment links.

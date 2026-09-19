@@ -34,6 +34,13 @@ text +=
   "\n## Practice missions\n\n| Mission | Domain | Minutes | Requirements |\n| --- | --- | --- | --- |\n";
 for (const m of s.missions)
   text += `| [${safe(m.title)}](https://kubequest.ramideltoro.com/ckad/${m.id}) | ${safe(m.domain)} | ${m.minutes} | ${m.objectives.map(safe).join("; ")} |\n`;
+if (s.visuals?.length) {
+  text += "\n## Visual learning library\n\nReviewed teaching diagrams; these do not report live cluster state. See the [visual learning guide](Visual-learning.md) for interaction, accessibility, and authoring details.\n\n| Diagram | Parts | Connections | Comparison |\n| --- | --- | --- | --- |\n";
+  for (const v of s.visuals) {
+    if (!/^\/[a-z0-9/#-]*$/.test(v.path)) throw Error("Invalid visual route");
+    text += `| [${safe(v.title)}](https://kubequest.ramideltoro.com${v.path}) | ${v.parts.map(safe).join("; ")} | ${v.connections} | ${safe(v.comparison || "Overview")} |\n`;
+  }
+}
 text +=
   "\n## Registered routes\n\nExtracted from the TypeScript route declarations. Private requests still require the owner session and applicable Origin/session checks described in the security chapter. “Public / OAuth transaction” does not bypass OAuth validation.\n\n| Method | Route | Access | Transport |\n| --- | --- | --- | --- |\n";
 for (const r of s.routes)

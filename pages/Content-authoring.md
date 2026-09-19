@@ -10,6 +10,10 @@ Add the corresponding interaction in `src/simulations.tsx`. Provide native butto
 
 Stable IDs are used in saved progress. If a lesson must be replaced, plan how old progress should appear rather than silently reusing an ID for unrelated content.
 
+## Diagram content
+
+Each lesson and mission also needs an entry keyed by its stable ID in `content/visuals.ts`. Follow the [visual authoring guidance](Visual-learning.md): four meaningful parts, labeled relationships, plain-English details, and a relevant comparison. The browser tests check every diagram at desktop and mobile sizes, keyboard exploration, missing images, clipped labels, text equivalents, and assistance visibility. Do not replace real lab observations with authored example states.
+
 ## CKAD missions
 
 1. Add the incident, objectives, curriculum mapping, modes/duration, hints, starter YAML, solution and explanation in `content/missions.ts`.

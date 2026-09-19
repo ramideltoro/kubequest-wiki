@@ -36,3 +36,7 @@ The portal runs on the existing home AI server through Cloudflare Tunnel. There 
 The canonical Markdown, PlantUML sources, and rendered SVGs live in the [kubequest-wiki repository](https://github.com/ramideltoro/kubequest-wiki). GitHub Pages hosts this site independently of the home server. Edit authored guides here; the KubeQuest release pipeline only replaces the generated reference and release records. Every successful application release and rollback waits for this hosted wiki to report the matching application commit. Diagrams are documentation models, not live telemetry.
 
 The [current release reference](Current-release.md) is generated from the deployed code: lesson objectives, mission requirements, registered routes, and locked runtime dependencies. [Release history](Release-history.md) records updates. Changes to application behavior or infrastructure also require an authored documentation review in CI.
+
+## Visual learning
+
+Explore the [45-diagram teaching library](Visual-learning.md), including clickable parts, failure comparisons, mobile connections, progress charts, and the curriculum-weight chart. Every lesson and mission has a topic-specific visual explanation.
