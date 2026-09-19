@@ -23,7 +23,7 @@ The real coach was tested through the public Cloudflare hostname using authorize
 | First request, including model startup | 28 ms | 26.3 seconds | 34.1 seconds |
 | Following request with the model loaded | 59 ms | 1.9 seconds | 7.7 seconds |
 
-Both requests completed with model answers rather than fallback text. Cancelling a third stream released the inference slot, and the next question received a complete model answer. The temporary lab was then stopped; no attempts were graded. All six checked application, AI, tunnel, and observability services remained active. After cleanup the host reported approximately 6.9 GiB used and 53 GiB available, with no swap usage. These are single-run observations, not latency or capacity guarantees.
+Both requests completed with model answers rather than fallback text. Cancelling a third stream released the inference slot, and the next question received a complete model answer. The temporary lab was then stopped; no attempts were graded. All six checked application, AI, tunnel, and observability services remained active. After cleanup the host reported approximately 6.7 GiB used and 52 GiB available, with no swap usage. These are single-run observations, not latency or capacity guarantees.
 
 ## Real lab qualification
 
