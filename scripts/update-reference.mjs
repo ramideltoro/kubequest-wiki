@@ -1,14 +1,60 @@
-import fs from 'node:fs';
-const input=process.argv[2]||'generated/current.json';const s=JSON.parse(fs.readFileSync(input,'utf8'));
-if(s.schema!==1||!/^[a-f0-9]{40}$/.test(s.sourceRevision)||!Array.isArray(s.routes)||s.lessons.length!==10||s.missions.length<8)throw Error('Invalid release reference');
-const safe=x=>String(x).replace(/[\\`*_{}\[\]<>|]/g,'\\$&').replace(/\r?\n/g,' ');
-fs.mkdirSync('generated/releases',{recursive:true});fs.writeFileSync('generated/current.json',JSON.stringify(s,null,2)+'\n');fs.writeFileSync('generated/releases/'+s.sourceRevision+'.json',JSON.stringify(s,null,2)+'\n');
-let text=`# Current release reference\n\nThis page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.\n\n- **Application commit:** [${s.sourceRevision.slice(0,7)}](${s.sourceUrl})\n- **Commit date:** ${s.generatedAt}\n- **Change:** ${safe(s.summary)}\n- **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)\n${s.sourceRun?'- **Release pipeline:** [GitHub Actions]('+s.sourceRun+')\n':''}\n## Lessons\n\n| Lesson | Minutes | Learning objectives |\n| --- | --- | --- |\n`;
-for(const l of s.lessons)text+=`| [${safe(l.title)}](https://kubequest.ramideltoro.com/basics/${l.id}) | ${l.minutes} | ${l.objectives.map(safe).join('; ')} |\n`;
-text+='\n## Practice missions\n\n| Mission | Domain | Minutes | Requirements |\n| --- | --- | --- | --- |\n';for(const m of s.missions)text+=`| [${safe(m.title)}](https://kubequest.ramideltoro.com/ckad/${m.id}) | ${safe(m.domain)} | ${m.minutes} | ${m.objectives.map(safe).join('; ')} |\n`;
-text+='\n## Registered routes\n\nExtracted from the TypeScript route declarations. Private requests still require the owner session and applicable Origin/session checks described in the security chapter. “Public / OAuth transaction” does not bypass OAuth validation.\n\n| Method | Route | Access | Transport |\n| --- | --- | --- | --- |\n';for(const r of s.routes)text+=`| ${safe(r.method)} | \`${r.path.replace(/`/g,'')}\` | ${r.access} | ${r.websocket?'WebSocket upgrade':'HTTP'} |\n`;
-text+='\n## Locked runtime dependencies\n\nThese are the versions in the deployed application lockfile, not a list of latest available packages.\n\n| Package | Locked version | Declared range |\n| --- | --- | --- |\n';for(const d of s.dependencies)text+=`| ${safe(d.name)} | ${safe(d.installed)} | ${safe(d.range)} |\n`;
-fs.writeFileSync('pages/Current-release.md',text);
-const releases=fs.readdirSync('generated/releases').filter(n=>/^[a-f0-9]{40}\.json$/.test(n)).map(n=>JSON.parse(fs.readFileSync('generated/releases/'+n,'utf8'))).sort((a,b)=>b.generatedAt.localeCompare(a.generatedAt));
-fs.writeFileSync('pages/Release-history.md','# Release history\n\nThe current live application is ['+s.sourceRevision.slice(0,7)+']('+s.sourceUrl+'). This history records source revisions published through the release integration. Rollback changes the current reference; earlier records remain available.\n\n| Commit | Commit date | Change | Pipeline |\n| --- | --- | --- | --- |\n'+releases.map(r=>`| [${r.sourceRevision.slice(0,7)}](${r.sourceUrl}) | ${r.generatedAt} | ${safe(r.summary)} | ${r.sourceRun?'[Run]('+r.sourceRun+')':'Initial migration'} |`).join('\n')+'\n');
-console.log('Updated generated reference for '+s.sourceRevision);
+import fs from "node:fs";
+const input = process.argv[2] || "generated/current.json";
+const s = JSON.parse(fs.readFileSync(input, "utf8"));
+if (
+  s.schema !== 1 ||
+  !/^[a-f0-9]{40}$/.test(s.sourceRevision) ||
+  !Array.isArray(s.routes) ||
+  !Array.isArray(s.lessons) ||
+  !s.lessons.length ||
+  !Array.isArray(s.missions) ||
+  !s.missions.length
+)
+  throw Error("Invalid release reference");
+const safe = (x) =>
+  String(x)
+    .replace(/[\\`*_{}\[\]<>|]/g, "\\$&")
+    .replace(/\r?\n/g, " ");
+fs.mkdirSync("generated/releases", { recursive: true });
+fs.writeFileSync("generated/current.json", JSON.stringify(s, null, 2) + "\n");
+fs.writeFileSync(
+  "generated/releases/" + s.sourceRevision + ".json",
+  JSON.stringify(s, null, 2) + "\n",
+);
+let text = `# Current release reference\n\nThis page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.\n\n- **Application commit:** [${s.sourceRevision.slice(0, 7)}](${s.sourceUrl})\n- **Commit date:** ${s.generatedAt}\n- **Change:** ${safe(s.summary)}\n- **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)\n${s.sourceRun ? "- **Release pipeline:** [GitHub Actions](" + s.sourceRun + ")\n" : ""}\n## Lessons\n\n| Lesson | Minutes | Learning objectives |\n| --- | --- | --- |\n`;
+for (const l of s.lessons)
+  text += `| [${safe(l.title)}](https://kubequest.ramideltoro.com/basics/${l.id}) | ${l.minutes} | ${l.objectives.map(safe).join("; ")} |\n`;
+text +=
+  "\n## Practice missions\n\n| Mission | Domain | Minutes | Requirements |\n| --- | --- | --- | --- |\n";
+for (const m of s.missions)
+  text += `| [${safe(m.title)}](https://kubequest.ramideltoro.com/ckad/${m.id}) | ${safe(m.domain)} | ${m.minutes} | ${m.objectives.map(safe).join("; ")} |\n`;
+text +=
+  "\n## Registered routes\n\nExtracted from the TypeScript route declarations. Private requests still require the owner session and applicable Origin/session checks described in the security chapter. “Public / OAuth transaction” does not bypass OAuth validation.\n\n| Method | Route | Access | Transport |\n| --- | --- | --- | --- |\n";
+for (const r of s.routes)
+  text += `| ${safe(r.method)} | \`${r.path.replace(/`/g, "")}\` | ${r.access} | ${r.websocket ? "WebSocket upgrade" : "HTTP"} |\n`;
+text +=
+  "\n## Locked runtime dependencies\n\nThese are the versions in the deployed application lockfile, not a list of latest available packages.\n\n| Package | Locked version | Declared range |\n| --- | --- | --- |\n";
+for (const d of s.dependencies)
+  text += `| ${safe(d.name)} | ${safe(d.installed)} | ${safe(d.range)} |\n`;
+fs.writeFileSync("pages/Current-release.md", text);
+const releases = fs
+  .readdirSync("generated/releases")
+  .filter((n) => /^[a-f0-9]{40}\.json$/.test(n))
+  .map((n) => JSON.parse(fs.readFileSync("generated/releases/" + n, "utf8")))
+  .sort((a, b) => b.generatedAt.localeCompare(a.generatedAt));
+fs.writeFileSync(
+  "pages/Release-history.md",
+  "# Release history\n\nThe current live application is [" +
+    s.sourceRevision.slice(0, 7) +
+    "](" +
+    s.sourceUrl +
+    "). This history records source revisions published through the release integration. Rollback changes the current reference; earlier records remain available.\n\n| Commit | Commit date | Change | Pipeline |\n| --- | --- | --- | --- |\n" +
+    releases
+      .map(
+        (r) =>
+          `| [${r.sourceRevision.slice(0, 7)}](${r.sourceUrl}) | ${r.generatedAt} | ${safe(r.summary)} | ${r.sourceRun ? "[Run](" + r.sourceRun + ")" : "Initial migration"} |`,
+      )
+      .join("\n") +
+    "\n",
+);
+console.log("Updated generated reference for " + s.sourceRevision);

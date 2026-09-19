@@ -49,7 +49,12 @@ for (const page of fs.readdirSync(base).filter((x) => x.endsWith(".md"))) {
     const link = match[1].split("#")[0];
     if (!link || /^(https?:|mailto:)/.test(link)) continue;
     assert(
-      !link.includes("..") && fs.existsSync(link.startsWith("diagrams/") || link.startsWith("reference/") ? link : base + "/" + link),
+      !link.includes("..") &&
+        fs.existsSync(
+          link.startsWith("diagrams/") || link.startsWith("reference/")
+            ? link
+            : base + "/" + link,
+        ),
       `Broken link ${page}: ${link}`,
     );
   }
