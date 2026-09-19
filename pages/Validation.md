@@ -12,6 +12,19 @@ Deployment checks the exact local release SHA, Google configuration and lab-temp
 
 The expanded suite exercises all twenty new lesson activities, including failed pipeline gates, wrong addresses/ports, missing runtimes, local versus remote Git history, staging mismatches, persistence and restore, healthy traffic routing, namespace scoping, memory placement/limits, task completion and evidence-led repairs. Browser checks include the coach response and Stop contract with explicit mock responses; backend tests use real HTTP with a mocked model to verify early streaming and authorization. Model failure, incomplete output, timeout, concurrency and cancellation are tested separately. Live local-model/API measurements are performed on the home server without making the coach public.
 
+### Published release check — 19 September 2026
+
+Release `0ea0171c61a02c929f38482c1f49d3d5337471da` passed the [application CI and deployment workflow](https://github.com/ramideltoro/kubequest/actions/runs/35448544233), including 23 application tests. Its [wiki synchronization and publication](https://github.com/ramideltoro/kubequest-wiki/actions/runs/35448660298) also passed. The deployed public portal passed all thirty lesson completions with restored progress, 36 responsive/accessibility route checks, twenty new interactive lesson exercises, and nine additional interactive layouts.
+
+The real coach was tested through the public Cloudflare hostname using authorized requests and a temporary guided lab. These measurements include the public connection and real model inference:
+
+| Request | First progress message | First answer text | Complete answer |
+| --- | --- | --- | --- |
+| First request, including model startup | 28 ms | 26.3 seconds | 34.1 seconds |
+| Following request with the model loaded | 59 ms | 1.9 seconds | 7.7 seconds |
+
+Both requests completed with model answers rather than fallback text. Cancelling a third stream released the inference slot, and the next question received a complete model answer. The temporary lab was then stopped; no attempts were graded. All six checked application, AI, tunnel, and observability services remained active. After cleanup the host reported approximately 6.9 GiB used and 53 GiB available, with no swap usage. These are single-run observations, not latency or capacity guarantees.
+
 ## Real lab qualification
 
 The initial deployment exercised every mission in a separate disposable VM. The broken initial state failed complete validation; each authored solution passed all four checks; an incomplete repair failed; and a valid alternative passed.

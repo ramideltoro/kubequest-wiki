@@ -6,7 +6,7 @@ The coach uses the existing Ollama `qwen2.5:7b` model on the home server. It is 
 
 ## What the learner sees
 
-The **Talk it through** panel offers question starters, a question field, an elapsed-time indicator, a streamed answer, and a **Stop** button. The browser receives progress immediately and displays words as the model produces them. A reviewed first hint is available in a separate panel at any time assistance is allowed. Fallback answers are labeled **Reviewed explanation**; a busy model is not presented as an AI answer.
+The **Talk it through** panel offers question starters, a question field, an elapsed-time indicator, a streamed answer, and a **Stop answer** button. The browser receives progress immediately and displays words as the model produces them. A reviewed first hint is available in a separate panel at any time assistance is allowed. Fallback answers are labeled **Reviewed explanation**; a busy model is not presented as an AI answer.
 
 The original implementation buffered the entire answer and retained the model for only two minutes. That made a working but cold model look unresponsive. The new path streams output, limits response length, keeps the model loaded for 15 minutes after use, and reports failure instead of leaving an indefinite spinner. A first request can still take longer, and other local AI workloads can affect speed.
 
@@ -41,3 +41,5 @@ Use `journalctl -u kubequest` to inspect records with `component: "coach"`. Comp
 ## Validation
 
 Automated tests cover evidence sanitization, streamed tokens before completion, failed and incomplete responses, single-request concurrency, cancellation, timeouts, missing evidence, HTTP authorization, and empty questions. Browser contract checks verify rendered responses and Stop behavior using explicitly mocked inference. Real-model measurements and private API qualification are separate from those mock tests. Timing measurements are observations of the home server, not latency guarantees.
+
+The [19 September 2026 live qualification](Validation.md#published-release-check-19-september-2026) verified real answers, early progress through Cloudflare, and cancellation followed by a successful new question. The first answer completed in 34.1 seconds including model startup; the following answer completed in 7.7 seconds. A cold model can still need time before the first words appear, while the progress indicator and reviewed guidance remain available.
