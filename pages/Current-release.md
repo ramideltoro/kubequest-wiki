@@ -2,13 +2,34 @@
 
 This page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.
 
-- **Application commit:** [498552c](https://github.com/ramideltoro/kubequest/commit/498552ce7c04209db4ea9d375155616cbeaffdc9)
-- **Commit date:** 2026-09-19T09:40:35-04:00
-- **Change:** Move wiki to dedicated GitHub Pages repository and synchronize every release
+- **Application commit:** [0ea0171](https://github.com/ramideltoro/kubequest/commit/0ea0171c61a02c929f38482c1f49d3d5337471da)
+- **Commit date:** 2026-09-19T10:22:33-04:00
+- **Change:** Keep the timeout test connection alive on Node 22
 - **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)
-- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/35446477631)
+- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/35448544233)
 
-## Lessons
+## Before Kubernetes
+
+| Chapter | Minutes | Learning objectives |
+| --- | --- | --- |
+| [What is an application?](https://kubequest.ramideltoro.com/foundations/what-is-an-app) | 5 | Recognize the visible page, the behind-the-scenes logic, and saved data.; Explain why one application can need several programs. |
+| [Follow a request](https://kubequest.ramideltoro.com/foundations/request-and-response) | 6 | Follow a request and its response.; Tell an unreachable server from an application error. |
+| [Speak HTTP](https://kubequest.ramideltoro.com/foundations/http-and-https) | 7 | Read a simple HTTP request and response status.; Understand what HTTPS protects and what it cannot guarantee. |
+| [Find a server by name](https://kubequest.ramideltoro.com/foundations/dns-and-addresses) | 6 | Tell a name from an IP address.; Explain why changing DNS does not start an application. |
+| [Choose the right door](https://kubequest.ramideltoro.com/foundations/network-ports) | 7 | Explain why an address also needs a port.; Distinguish a firewall rule from a listening application. |
+| [What runs on a server?](https://kubequest.ramideltoro.com/foundations/server-processes) | 6 | Distinguish files, processes, CPU, and memory.; Understand the operating system and a safe service account. |
+| [Make your first deployment](https://kubequest.ramideltoro.com/foundations/deploy-an-app) | 7 | Describe deployment as more than uploading files.; Check an app after starting it and restore a working version. |
+| [Keep a history with Git](https://kubequest.ramideltoro.com/foundations/git-history) | 8 | Explain a repository, commit, branch, and merge.; Distinguish saving locally from publishing or deploying. |
+| [Check it before shipping](https://kubequest.ramideltoro.com/foundations/build-and-test) | 6 | Explain what a build produces and what a test checks.; Recognize that passing tests are evidence, not a guarantee. |
+| [Build a delivery pipeline](https://kubequest.ramideltoro.com/foundations/cicd-pipelines) | 8 | Read the stages of a CI/CD pipeline.; Distinguish continuous delivery from automatic deployment. |
+| [Same app, different settings](https://kubequest.ramideltoro.com/foundations/config-and-environments) | 6 | Separate code, configuration, and secrets.; Explain why development, staging, and production need different settings. |
+| [Keep the notes when the app stops](https://kubequest.ramideltoro.com/foundations/storage-and-backups) | 7 | Distinguish temporary memory from persistent storage.; Explain why persistence is not the same as a backup. |
+| [Package once, run it again](https://kubequest.ramideltoro.com/foundations/container-packages) | 7 | Distinguish an image, a container, and a registry.; Understand what still needs to be supplied outside the package. |
+| [Share the traffic](https://kubequest.ramideltoro.com/foundations/traffic-and-copies) | 7 | Explain a load balancer and a health check.; Recognize the limits of adding more app copies. |
+| [Find clues before changing things](https://kubequest.ramideltoro.com/foundations/read-the-signals) | 7 | Distinguish logs from metrics and traces.; Use a symptom, a hypothesis, a small change, and a check. |
+| [Why Kubernetes exists](https://kubequest.ramideltoro.com/foundations/why-orchestration) | 8 | Connect delivery, runtime, networking, storage, and recovery.; Choose when orchestration helps and when a simpler deployment is enough. |
+
+## Kubernetes Basics
 
 | Lesson | Minutes | Learning objectives |
 | --- | --- | --- |
@@ -22,6 +43,10 @@ This page is generated from the exact KubeQuest commit deployed to the server. I
 | [Settings, secrets, and saved notes](https://kubequest.ramideltoro.com/basics/settings-and-storage) | 9 | Choose ConfigMaps, Secrets, and persistent storage for different needs.; Avoid confusing encoding with encryption. |
 | [Update without the surprise outage](https://kubequest.ramideltoro.com/basics/safe-updates) | 8 | Explain rolling updates and readiness.; Understand what rollback does and does not restore. |
 | [Your first Kubernetes story](https://kubequest.ramideltoro.com/basics/bring-it-together) | 10 | Connect the core concepts without memorizing commands.; Identify a sensible next step toward real Kubernetes practice. |
+| [Give everything a clear home](https://kubequest.ramideltoro.com/basics/namespaces-and-labels) | 6 | Use a namespace to narrow your view.; Explain the difference between grouping resources and protecting them. |
+| [Leave enough room to run](https://kubequest.ramideltoro.com/basics/resource-budgets) | 8 | Distinguish resource requests from limits.; Tell a placement problem from a memory-limit problem. |
+| [Some work should finish](https://kubequest.ramideltoro.com/basics/jobs-that-finish) | 6 | Choose a Job for work with a completion point.; Understand retries and scheduled work without assuming exactly-once execution. |
+| [Read the clues, then make a change](https://kubequest.ramideltoro.com/basics/observe-and-debug) | 7 | Use status, events, logs, and a real request together.; Reject a superficial fix that only hides the warning. |
 
 ## Practice missions
 
