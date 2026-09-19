@@ -4,9 +4,13 @@ KubeQuest is a pilot. Test results describe the implementation and environment a
 
 ## Per-commit CI
 
-The [GitHub workflow](https://github.com/ramideltoro/kubequest/actions) runs locked dependency installation, a high/critical vulnerability gate, unit/security/lifecycle/archive checks, documentation integrity checks, TypeScript/Vite build, and anonymous browser verification. The browser suite completes all ten beginner lessons and confirms restoration of saved progress. It also checks responsive layout, automated WCAG rules and footer interactions. Screenshots are retained as workflow artifacts.
+The [GitHub workflow](https://github.com/ramideltoro/kubequest/actions) runs locked dependency installation, a high/critical vulnerability gate, unit/security/lifecycle/archive checks, documentation integrity checks, TypeScript/Vite build, and anonymous browser verification. The browser suite completes all thirty beginner lessons and confirms restoration of saved progress. It also checks responsive layout, automated WCAG rules and footer interactions. Screenshots are retained as workflow artifacts.
 
 Deployment checks the exact local release SHA, Google configuration and lab-template availability, then verifies the public hostname and rejects anonymous private-API access. These are delivery checks; they do not replace mission-level behavioral qualification.
+
+## Foundations and coach checks
+
+The expanded suite exercises all twenty new lesson activities, including failed pipeline gates, wrong addresses/ports, missing runtimes, local versus remote Git history, staging mismatches, persistence and restore, healthy traffic routing, namespace scoping, memory placement/limits, task completion and evidence-led repairs. Browser checks include the coach response and Stop contract with explicit mock responses; backend tests use real HTTP with a mocked model to verify early streaming and authorization. Model failure, incomplete output, timeout, concurrency and cancellation are tested separately. Live local-model/API measurements are performed on the home server without making the coach public.
 
 ## Real lab qualification
 

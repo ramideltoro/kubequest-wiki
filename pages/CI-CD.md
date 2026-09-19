@@ -12,7 +12,7 @@ The main workflow is `.github/workflows/ci-cd.yml`. Pull requests run verificati
 4. Run content, authorization, lifecycle and deployment-archive tests.
 5. Check wiki links, required diagrams and source/render hashes.
 6. Validate the canonical wiki checkout, documentation-review record, and source-derived release export, then type-check and build the frontend.
-7. Run Chromium through all ten anonymous lesson completions, wrong-answer feedback, local progress restoration, responsive routes, WCAG checks, footer search, keyboard behavior and private-API rejection.
+7. Run Chromium through all thirty anonymous lesson completions, wrong-answer feedback, local progress restoration, responsive routes, WCAG checks, footer search, keyboard behavior and private-API rejection, foundation experiments, and the coach UI contract.
 8. Save browser screenshots as workflow evidence and create a release archive with its SHA256 checksum.
 
 Artifacts are retained for 14 days. The archive contains compiled frontend assets, server/content/infrastructure files, locked production dependencies metadata, and `RELEASE.json`. It does not contain runtime secrets, a database, VM images, private keys, or `node_modules`.

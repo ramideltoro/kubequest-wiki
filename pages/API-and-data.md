@@ -20,9 +20,9 @@ The backend serves JSON over same-origin HTTPS and terminal/resource streams ove
 | `POST /api/private/grade` | Owner + matching Origin + current ID | Run authored checks and store an attempt |
 | `GET /api/private/progress` | Owner | Read private completion and attempt history |
 | `POST /api/private/progress` | Owner + matching Origin | Save a known beginner lesson completion |
-| `POST /api/private/tutor` | Owner + matching Origin + eligible session | Ask the optional local tutor |
+| `POST /api/private/tutor` | Owner + matching Origin + eligible session | Ask the coach; optional NDJSON streaming |
 
-A start body is `{"missionId":"lost-in-routing","mode":"guided"}`. Session-dependent requests include `sessionId`. Apply additionally includes `yaml`; tutor includes `question`. Treat returned session IDs as identifiers, not authorization tokens: the signed cookie remains mandatory.
+A start body is `{"missionId":"lost-in-routing","mode":"guided"}`. Session-dependent requests include `sessionId`. Apply additionally includes `yaml`; tutor includes `question` and optional `stream: true`. Stream events are `status`, `token`, and `done`; see [the coach contract](Local-tutor.md). Treat returned session IDs as identifiers, not authorization tokens: the signed cookie remains mandatory.
 
 Common responses are 401 for missing/invalid identity, 403 for an incorrect Origin, 400 for invalid input, 409 for stale or unavailable session state, 429 for request limits, and 503 for a deployment maintenance window. Errors should be displayed without revealing internal credentials or command infrastructure.
 
@@ -41,7 +41,7 @@ Terminal input is capped at 8,192 characters per message. Resize dimensions are 
 
 SQLite runs in WAL mode. The `attempts` table stores an integer ID, mission ID, mode, completion timestamp, elapsed seconds, and authored results encoded as JSON. The `progress` table stores a stable lesson ID and completion timestamp. These records survive application updates and lab resets because the database is outside the release directory.
 
-Session state is in memory; VM disks and process records are disposable files in the lab directory. The browser's `kubequest-progress` localStorage key stores anonymous completed lesson IDs. The application does not persist tutor chats or terminal transcripts.
+Session state is in memory; VM disks and process records are disposable files in the lab directory. The browser's `kubequest-progress` localStorage key stores anonymous completed IDs from both beginner paths. Each path filters its own IDs for counting. The application does not persist tutor chats or terminal transcripts.
 
 ![Object diagram: illustrative broken Service routing attempt](diagrams/object.svg)
 

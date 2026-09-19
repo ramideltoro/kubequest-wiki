@@ -70,8 +70,8 @@ skinparam activityStartColor #F3BD62
 skinparam activityEndColor #F3BD62
 title KubeQuest - overall learning interactions
 start
-if (Choose learning path) then (Basics)
- :<<interaction>>\nPublic lesson activity;
+if (Choose learning path) then (Foundations / Basics)
+ :<<interaction>>\nPublic lesson activity and suggested courses;
  :<<interaction>>\nLocal progress restoration;
 else (CKAD)
  :<<interaction>>\nExplore mission and recorded walkthrough;

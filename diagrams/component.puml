@@ -70,8 +70,8 @@ skinparam activityStartColor #F3BD62
 skinparam activityEndColor #F3BD62
 title KubeQuest - runtime components
 package "Browser" {
- component "React router and lessons" as UI
- component "Simulation controls" as Sim
+ component "React router: Foundations / Basics / CKAD" as UI
+ component "Browser experiments and local progress" as Sim
  component "Terminal and YAML editor" as Editor
 }
 package "Portal service" {
@@ -100,5 +100,7 @@ Lab --> K3s : pinned SSH
 Grade --> Lab : configuration and behavior
 API --> Grade
 API --> Tutor
-Tutor --> Ollama : bounded local request
+Tutor --> Ollama : one bounded streaming request
+Tutor --> UI : NDJSON status / tokens / fallback
+UI --> Tutor : cancel on Stop or disconnect
 @enduml

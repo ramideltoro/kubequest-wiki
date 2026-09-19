@@ -70,6 +70,7 @@ skinparam activityStartColor #F3BD62
 skinparam activityEndColor #F3BD62
 title KubeQuest - public lesson activity
 start
+:Choose Before Kubernetes or Kubernetes Basics;
 :Choose a lesson about Little Notes;
 :See the problem in plain English;
 :Explore the labeled diagram;
@@ -90,6 +91,7 @@ endwhile (yes)
 if (Authorized session?) then (yes)
  :Also save private lesson progress;
 endif
-:Continue or return later;
+:Optionally open a suggested course or guide;
+:Continue to the next learning path or return later;
 stop
 @enduml

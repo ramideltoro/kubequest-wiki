@@ -4,13 +4,14 @@
 
 KubeQuest teaches Kubernetes through visible consequences: try a change, observe what happens, and understand why. Ten beginner lessons follow **Little Notes**, one small example application. Eight original CKAD missions turn common application incidents into practice in a real disposable cluster.
 
-The beginner path is public and needs no installation, account, or terminal. Real labs, grading, private progress, and the local AI tutor are restricted to the authorized owner. Public visitors can still explore every mission brief and watch a captioned recording of its solution.
+Both beginner paths are public and need no installation, account, or terminal. Real labs, grading, private progress, and the local AI tutor are restricted to the authorized owner. Public visitors can still explore every mission brief and watch a captioned recording of its solution.
 
 ## Find your way
 
 | Page | What it explains |
 | --- | --- |
 | [Architecture](Architecture.md) | Components, source packages, hosting, and trust boundaries |
+| [Before Kubernetes](Before-Kubernetes.md) | Sixteen foundations chapters and their interactive teaching models |
 | [Learning paths](Learning-paths.md) | Beginner flow, progress, and practice modes |
 | [CKAD missions](Missions.md) | Eight incidents, validators, recordings, and coverage limits |
 | [Authentication and security](Authentication-and-security.md) | Google sign-in, owner authorization, browser and VM boundaries |

@@ -1,23 +1,43 @@
-# Optional local AI tutor
+# Optional local AI coach
 
-The tutor uses the existing Ollama `qwen2.5:7b` model on the home server. It is available only after owner authorization and only for an eligible current session. Timed attempts deny assistance until submission.
+The coach uses the existing Ollama `qwen2.5:7b` model on the home server. It is available only to the authorized owner in a ready, non-timed lab. Public learning does not depend on it. Grading never uses model output.
 
-![Communication diagram: authorized question, reviewed content, sanitized evidence, inference and fallback](diagrams/communication.svg)
+![Communication diagram: authorization, compact evidence, streamed inference, cancellation and fallback](diagrams/communication.svg)
 
-## Context and limits
+## What the learner sees
 
-The backend selects the reviewed mission brief, objectives and explanation, then adds a bounded sanitized resource summary. It sends the learner's question as a separate user message. Resource names and user text are untrusted data. Secret values and arbitrary cluster configuration are not supplied as tutor context.
+The **Talk it through** panel offers question starters, a question field, an elapsed-time indicator, a streamed answer, and a **Stop** button. The browser receives progress immediately and displays words as the model produces them. A reviewed first hint is available in a separate panel at any time assistance is allowed. Fallback answers are labeled **Reviewed explanation**; a busy model is not presented as an AI answer.
 
-The application allows one inference request at a time. Its request uses a 4,096-token context setting, at most 400 predicted tokens, four model threads, low temperature, and a short keep-alive period. These settings bound application demand, but actual latency depends on other host workloads and whether the model is already loaded.
+The original implementation buffered the entire answer and retained the model for only two minutes. That made a working but cold model look unresponsive. The new path streams output, limits response length, keeps the model loaded for 15 minutes after use, and reports failure instead of leaving an indefinite spinner. A first request can still take longer, and other local AI workloads can affect speed.
 
-## Authority
+## Context and resource limits
 
-The model has **no tools and cannot execute commands**. It cannot apply YAML, start or reset labs, change content, or decide grades. Suggestions can be wrong; validate them with Kubernetes observations and the authored checks. The application never treats model text as trusted instructions for the host.
+`server/coach.ts` owns inference and the single-request lock. It selects reviewed mission content and a compact resource summary. The summary includes at most twelve objects and 1,800 characters: resource kind, bounded name, phase, readiness, replicas, waiting reason, and restart count. Arbitrary labels, annotations, YAML, environment variables, Secret contents, and terminal output are excluded. The evidence lookup has a four-second deadline; if it fails, the coach works from authored guidance and states that observations are unavailable.
 
-## Failure behavior
+Questions contain 1–1,500 characters. The request uses a 4,096-token context, at most 220 output tokens, four threads, temperature 0.2, and a 15-minute keep-alive. The prompt asks for plain English, a short explanation, and one read-only diagnostic step. These are guidance constraints, not a claim that model text is always correct.
 
-If inference fails, times out, or returns an unusable result, the application returns the reviewed first hint and explanation. Authored hints and solutions remain available without the model. The UI identifies fallback guidance so the learner understands what happened.
+One inference runs at a time. The total model operation is bounded by a 65-second timeout; the browser has a 75-second connection guard. A Stop action, disconnected browser, lab reset/stop, or application shutdown aborts the associated request. Cancellation releases the inference slot. No global Ollama configuration or other AI service is changed.
 
-## Resource evidence
+## HTTP contract
 
-During initial qualification, a real tutor response completed in approximately 29 seconds including model load. The model process reached about 4.8 GiB resident memory during a short sample; the VM used about 2 GiB. These are observations from that host at that time, not a throughput guarantee or sustained-load benchmark. See [validation](Validation.md) and [operations](Operations.md).
+`POST /api/private/tutor` requires the normal owner cookie, matching Origin, current `sessionId`, and eligible mode. The browser sends `{sessionId, question, stream: true}` and receives newline-delimited JSON with `application/x-ndjson` content type:
+
+```json
+{"type":"status","message":"Checking the lab…"}
+{"type":"token","text":"Check the Service selector."}
+{"type":"done","answer":"Check the Service selector.","fallback":false,"elapsedMs":12000,"firstTokenMs":4000}
+```
+
+Progress heartbeats occur every five seconds. Responses are marked `no-store, no-transform`; proxy buffering is disabled where supported. A request without `stream: true` retains a final JSON response for existing integrations. Authentication and invalid-input errors still use normal HTTP error statuses before a stream starts.
+
+On model failure, timeout, malformed output, or an incomplete response, the final event replaces partial AI text with the authored first hint and explanation. It includes `fallback: true` and a human-readable reason. The UI never treats partial text as a completed answer.
+
+## Authority and privacy
+
+The model has no tools, command execution, YAML application, session management, or grading authority. Resource names and questions are untrusted data. Model text is rendered as text, never HTML. Questions and answers are not persisted. Logs contain only outcome and timing fields, without question text, answers, credentials, or lab objects.
+
+Use `journalctl -u kubequest` to inspect records with `component: "coach"`. Compare `firstTokenMs`, `elapsedMs`, and `outcome` before changing model settings. Check `ollama ps` and host memory when the response is slow. A service restart can affect an active lab; use the normal idle-aware deployment process.
+
+## Validation
+
+Automated tests cover evidence sanitization, streamed tokens before completion, failed and incomplete responses, single-request concurrency, cancellation, timeouts, missing evidence, HTTP authorization, and empty questions. Browser contract checks verify rendered responses and Stop behavior using explicitly mocked inference. Real-model measurements and private API qualification are separate from those mock tests. Timing measurements are observations of the home server, not latency guarantees.

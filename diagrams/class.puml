@@ -71,6 +71,7 @@ skinparam activityEndColor #F3BD62
 title KubeQuest - implemented content and runtime model
 class Lesson <<TypeScript type>> {
  id: string
+ activity: string?
  title: string
  learn: string[]
  paragraphs: string[]
@@ -122,6 +123,13 @@ class Progress <<SQLite row>> {
  lesson: text [primary key]
  completed_at: integer
 }
+class Coach {
+ active: inference | null
+ answer(mission, sessionId, question, snapshot, signal, emit)
+ cancel(sessionId?)
+}
+Coach --> Mission : reviewed guidance
+Coach --> Lab : sanitized snapshot
 Lab "1" o-- "0..1" Session
 Session --> Mission : missionId
 Attempt --> Mission : mission

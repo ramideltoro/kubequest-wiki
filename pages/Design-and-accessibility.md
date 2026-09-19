@@ -20,7 +20,7 @@ These tokens are in `src/style.css`. The terminal and YAML syntax theme use matc
 
 ## NutsNews-style footer
 
-The footer adapts the actual NutsNews site structure: a compact fixed dark strip, circular Home/Search/Site menu shortcuts, a rounded navigation group and a centered copyright line linking to Rami Del Toro. KubeQuest links lead to Basics, CKAD, About, Readme, Privacy and Wiki. The site menu also exposes source and deployment links.
+The footer adapts the actual NutsNews site structure: a compact fixed dark strip, circular Home/Search/Site menu shortcuts, a rounded navigation group and a centered copyright line linking to Rami Del Toro. KubeQuest links lead to Foundations, Basics, CKAD, About, Readme, Privacy and Wiki. The site menu also exposes source and deployment links.
 
 Search runs against local lesson and mission content. Its native dialog supports keyboard focus, Escape and a named close button. Site-menu controls expose expanded state. Page spacing reserves room for the fixed footer on desktop and mobile so final lesson controls remain reachable.
 
@@ -36,8 +36,10 @@ Search runs against local lesson and mission content. Its native dialog supports
 - Anonymous local progress restoration does not depend on animation, audio or live-cluster availability.
 - Wide wiki tables can scroll within their own container; diagrams scale and can be opened at full size.
 
+Coach responses stream as plain text with a separate status announcement, elapsed time and Stop control. Browser exercises use native buttons, selects, sliders and labeled controls. Generic application concepts use established Lucide UI symbols; existing official Kubernetes resource icons keep their source artwork.
+
 ## Verification scope
 
-Automated Chromium checks exercise public pages at 390, 768 and 1440 pixels, detect horizontal overflow, run axe WCAG A/AA checks, complete all ten lessons, restore saved progress and operate footer controls. These checks catch many regressions but do not establish complete accessibility conformance. Manual assistive-technology testing remains valuable, especially for the desktop-focused terminal/editor workspace.
+Automated Chromium checks exercise public pages at 390, 768 and 1440 pixels, detect horizontal overflow, run axe WCAG A/AA checks, complete all thirty lessons, restore saved progress and operate footer controls. These checks catch many regressions but do not establish complete accessibility conformance. Manual assistive-technology testing remains valuable, especially for the desktop-focused terminal/editor workspace.
 
 ![Composite-structure diagram: live-practice workspace parts and their API/WebSocket connections](diagrams/composite-structure.svg)

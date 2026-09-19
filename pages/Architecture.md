@@ -15,6 +15,7 @@ KubeQuest separates public learning from private cluster operations. The Fastify
 | Authentication | Google OAuth, PKCE, state, nonce and signed sessions | `server/auth.ts` |
 | Lab controller | One disposable VM, SSH, resource snapshots, lifecycle | `server/lab.ts` |
 | Mission grading | Broken initial manifests and authored configuration/behavior checks | `server/scenarios.ts` |
+| Coach service | Single inference, bounded context, NDJSON streaming, cancellation and authored fallback | `server/coach.ts`, `src/Coach.tsx` |
 | Ollama | Optional bounded local inference using `qwen2.5:7b` | Existing host service |
 | Release helpers | Restricted deployment receiver, archive checks, health and rollback | `infra/deploy-*`, `infra/release-format.mjs` |
 

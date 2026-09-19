@@ -22,6 +22,12 @@ fs.writeFileSync(
   JSON.stringify(s, null, 2) + "\n",
 );
 let text = `# Current release reference\n\nThis page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.\n\n- **Application commit:** [${s.sourceRevision.slice(0, 7)}](${s.sourceUrl})\n- **Commit date:** ${s.generatedAt}\n- **Change:** ${safe(s.summary)}\n- **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)\n${s.sourceRun ? "- **Release pipeline:** [GitHub Actions](" + s.sourceRun + ")\n" : ""}\n## Lessons\n\n| Lesson | Minutes | Learning objectives |\n| --- | --- | --- |\n`;
+if (s.foundations?.length) {
+  text = text.replace("## Lessons", "## Kubernetes Basics");
+  const heading = "## Before Kubernetes\n\n| Chapter | Minutes | Learning objectives |\n| --- | --- | --- |\n";
+  const rows = s.foundations.map(l => `| [${safe(l.title)}](https://kubequest.ramideltoro.com/foundations/${l.id}) | ${l.minutes} | ${l.objectives.map(safe).join("; ")} |`).join("\n");
+  text = text.replace("## Kubernetes Basics", heading + rows + "\n\n## Kubernetes Basics");
+}
 for (const l of s.lessons)
   text += `| [${safe(l.title)}](https://kubequest.ramideltoro.com/basics/${l.id}) | ${l.minutes} | ${l.objectives.map(safe).join("; ")} |\n`;
 text +=

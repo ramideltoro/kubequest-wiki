@@ -4,27 +4,27 @@
   "diagrams": [
     {
       "source": "activity.puml",
-      "sourceSha256": "b93c72f1f8b229c4dbfe25139be0f319aafb9988b02454a4d74e9e1ee8fea112",
+      "sourceSha256": "4f08ffd63999a1d3f316a8bac059918714baf832041de1f8a02f74c8170b3e4a",
       "svg": "activity.svg",
-      "svgSha256": "782bfc1c7994eeb72651bc9c88ad2ed65e2bde5d39ffdad71746ad96870f00f8"
+      "svgSha256": "e556b8b71d7316a706cb02191fa8496fe7dfc0f1e33125b12cdf6e0d91f96604"
     },
     {
       "source": "class.puml",
-      "sourceSha256": "25bf2ee69f32856454882c33e1e4f44d145154a05ae89a69aac8bc32f19df873",
+      "sourceSha256": "fa9f8a5ccef63fb8228da53f280343ad7362aaaa982eb09bb44c5d9a07161ceb",
       "svg": "class.svg",
-      "svgSha256": "74e94d543817640aab350ff091340cc9bea5b17fb4c38394279ac84ca29c46a1"
+      "svgSha256": "a90e0c672186b339c1fb5f238096370fc1202548c9743cf2493c9baf1844b74c"
     },
     {
       "source": "communication.puml",
-      "sourceSha256": "31fdd15c440d0c2e5fa6db5e99b17f83bbfcd3a68889478941b84f4f6376e01c",
+      "sourceSha256": "7a134a1cc979c817b94bf4726f45550788e48119f99ae766dc3badf48dcb265a",
       "svg": "communication.svg",
-      "svgSha256": "2e9f1ce4f94fa06d7304d7b387469ff91b0d9794a358baf328fb2429c9b36abc"
+      "svgSha256": "61a60f79b37465d8f80ee7471f48c511d3e8b7cefd2a8255457cc5e2683a21a5"
     },
     {
       "source": "component.puml",
-      "sourceSha256": "9ab6fe811ef83b659a0bcb2e276aa24ffc6b92528c521c4b66e4c68aa44fd6be",
+      "sourceSha256": "be9925089c2e6b3081d478965276278cb61e843c3948759ec8ae5a6cb4f78cc5",
       "svg": "component.svg",
-      "svgSha256": "4dd18d086afbce458ed1e258f700e1ca4f50bdd4f56b017ac923e2425e552125"
+      "svgSha256": "b70e1ce2362581f78730114f6cadc4cd0fcb77c76a2d56dc30c30a5c182c6184"
     },
     {
       "source": "composite-structure.puml",
@@ -40,9 +40,9 @@
     },
     {
       "source": "interaction-overview.puml",
-      "sourceSha256": "e9e479a9e7ba9ff52c765ebe3b4c660ebb805d5fc180f3a1a7d5477218b40ab2",
+      "sourceSha256": "7e6f2cdf73447404904eaa16fb9475d3ba811cd778ee510f22340a7b84d8ea51",
       "svg": "interaction-overview.svg",
-      "svgSha256": "bfba611407d84c32ef5ec73dd4030f4b698b1408c38aaaab51a913872a504e39"
+      "svgSha256": "e0098aca0754c3cb4f79b1e5a233d1b728001494e7d56f3b6c0eec87d6300b2b"
     },
     {
       "source": "object.puml",

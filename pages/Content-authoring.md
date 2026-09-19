@@ -4,7 +4,7 @@ Lessons, missions, diagrams and recordings are reviewed source content. A learne
 
 ## Beginner lessons
 
-Add a stable entry to `content/lessons.ts` with a unique ID, title/subtitle, objectives, plain-language problem, explanations, interaction instructions, why-it-happened explanation, analogy limits, glossary, optional code, understanding check and official documentation link.
+Add a stable entry to `content/foundations.ts` for pre-Kubernetes topics or `content/lessons.ts` for Kubernetes concepts with a unique ID, title/subtitle, objectives, plain-language problem, explanations, interaction instructions, why-it-happened explanation, analogy limits, glossary, optional code, understanding check and official documentation link.
 
 Add the corresponding interaction in `src/simulations.tsx`. Provide native buttons or labeled controls, keyboard operation, a textual state explanation and useful feedback. Label it a **browser simulation**. Avoid introducing a technical term before explaining it. Keep Little Notes as the common example. A correct quiz answer should test the concept, not memorization of a command.
 

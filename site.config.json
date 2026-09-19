@@ -5,21 +5,73 @@
   "repository": "https://github.com/ramideltoro/kubequest-wiki",
   "portal": "https://kubequest.ramideltoro.com",
   "chapters": [
-    ["Home", "Start here"],
-    ["Architecture", "Architecture"],
-    ["Learning-paths", "Learning paths"],
-    ["Missions", "CKAD missions"],
-    ["Authentication-and-security", "Authentication & security"],
-    ["Live-labs", "Live lab lifecycle"],
-    ["API-and-data", "API & data"],
-    ["Local-tutor", "Local AI tutor"],
-    ["CI-CD", "CI/CD pipeline"],
-    ["Operations", "Operations & recovery"],
-    ["Content-authoring", "Content authoring"],
-    ["Design-and-accessibility", "Design & accessibility"],
-    ["Validation", "Validation"],
-    ["UML-diagrams", "UML diagram library"],
-    ["Current-release", "Current release reference"],
-    ["Release-history", "Release history"]
+    [
+      "Home",
+      "Start here"
+    ],
+    [
+      "Architecture",
+      "Architecture"
+    ],
+    [
+      "Before-Kubernetes",
+      "Before Kubernetes"
+    ],
+    [
+      "Learning-paths",
+      "Learning paths"
+    ],
+    [
+      "Missions",
+      "CKAD missions"
+    ],
+    [
+      "Authentication-and-security",
+      "Authentication & security"
+    ],
+    [
+      "Live-labs",
+      "Live lab lifecycle"
+    ],
+    [
+      "API-and-data",
+      "API & data"
+    ],
+    [
+      "Local-tutor",
+      "Local AI tutor"
+    ],
+    [
+      "CI-CD",
+      "CI/CD pipeline"
+    ],
+    [
+      "Operations",
+      "Operations & recovery"
+    ],
+    [
+      "Content-authoring",
+      "Content authoring"
+    ],
+    [
+      "Design-and-accessibility",
+      "Design & accessibility"
+    ],
+    [
+      "Validation",
+      "Validation"
+    ],
+    [
+      "UML-diagrams",
+      "UML diagram library"
+    ],
+    [
+      "Current-release",
+      "Current release reference"
+    ],
+    [
+      "Release-history",
+      "Release history"
+    ]
   ]
 }

@@ -1,6 +1,6 @@
 # Content and artwork authoring
 
-Beginner lessons are versioned in `content/lessons.ts`. Keep stable IDs so existing progress remains valid. Each lesson includes the problem, objectives, four explanatory paragraphs, an interaction prompt, an explanation of why it behaves that way, a qualified analogy, a glossary, an optional command/YAML example, one knowledge check, and an official documentation link.
+Beginner lessons are versioned in `content/foundations.ts` and `content/lessons.ts`. New named activities are implemented in `src/Playgrounds.tsx`; established Kubernetes simulations remain in `src/simulations.tsx`. Course links live in `content/resources.ts`. Keep stable IDs so existing progress remains valid. Each lesson includes the problem, objectives, four explanatory paragraphs, an interaction prompt, an explanation of why it behaves that way, a qualified analogy, a glossary, an optional command/YAML example, one knowledge check, and an official documentation link.
 
 The ten lessons use Little Notes as a consistent example. Define unfamiliar words before relying on them. Keep commands optional in this path. Distinguish container restart, Pod replacement, persistent storage, and backup. Never imply that Kubernetes fixes application bugs or guarantees zero downtime.
 
