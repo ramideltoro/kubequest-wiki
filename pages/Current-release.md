@@ -2,10 +2,11 @@
 
 This page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.
 
-- **Application commit:** [4cdb259](https://github.com/ramideltoro/kubequest/commit/4cdb259b3a5e1357fb23bbc6eac2f18689eba854)
-- **Commit date:** 2026-09-19T07:48:09-04:00
-- **Change:** Add dark amber portal, NutsNews-style footer, UML wiki and GitHub deployment pipeline
+- **Application commit:** [498552c](https://github.com/ramideltoro/kubequest/commit/498552ce7c04209db4ea9d375155616cbeaffdc9)
+- **Commit date:** 2026-09-19T09:40:35-04:00
+- **Change:** Move wiki to dedicated GitHub Pages repository and synchronize every release
 - **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)
+- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/35446477631)
 
 ## Lessons
 
@@ -55,6 +56,9 @@ Extracted from the TypeScript route declarations. Private requests still require
 | POST | `/api/private/tutor` | Owner only | HTTP |
 | GET | `/api/private/resources` | Owner only | WebSocket upgrade |
 | GET | `/api/private/terminal` | Owner only | WebSocket upgrade |
+| GET | `/wiki` | Public / OAuth transaction | HTTP |
+| GET | `/wiki/*` | Public / OAuth transaction | HTTP |
+| GET | `/wiki-assets/*` | Public / OAuth transaction | HTTP |
 | GET | `/auth/google` | Public / OAuth transaction | HTTP |
 | GET | `/auth/google/callback` | Public / OAuth transaction | HTTP |
 | POST | `/auth/logout` | Public / OAuth transaction | HTTP |
@@ -80,9 +84,7 @@ These are the versions in the deployed application lockfile, not a list of lates
 | lucide-react | 0.468.0 | ^0.468.0 |
 | react | 19.3.0 | ^19.2.0 |
 | react-dom | 19.3.0 | ^19.2.0 |
-| react-markdown | 10.1.0 | ^10.1.0 |
 | react-router-dom | 7.18.4 | ^7.9.0 |
-| remark-gfm | 4.0.1 | ^4.0.1 |
 | ssh2 | 1.17.0 | ^1.17.0 |
 | tsx | 4.23.13 | ^4.20.0 |
 | yaml | 2.9.1 | ^2.8.0 |
