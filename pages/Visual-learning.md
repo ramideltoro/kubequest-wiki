@@ -8,6 +8,8 @@ The diagrams are teaching illustrations. They do not report live cluster state. 
 
 Select a labeled part to read its role in plain English. Previous and Next controls visit the other parts. A comparison button reveals a relevant failure, recovery boundary, or distinction: a lost response, an unmatched Service selector, a blocked pipeline gate, or the difference between an image and a running container.
 
+Comparison views update the affected part names and status notes as well as the relationships. For example, an unknown HTTP path shows GET /missing and a 404 response; an unavailable copy says it is skipped; and a deny-all policy says it allows nobody. Switching back restores the working example. The text equivalents use the same current labels, so the picture and accessible description remain aligned.
+
 Connections have arrowheads and short labels. A blocked relationship uses a dashed line, a cross, and text; color is never the only explanation. Each diagram includes a text version of its relationships. On narrow screens, the parts become a readable grid followed by labeled connection rows, avoiding tiny text or sideways scrolling.
 
 The original lesson prose, analogies, terminology, simulations, quizzes, and source links remain available. Diagrams supplement the explanations. They do not silently mark a lesson or exercise complete.
