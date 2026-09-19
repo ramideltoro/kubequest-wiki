@@ -2,11 +2,11 @@
 
 This page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.
 
-- **Application commit:** [bfe8c3c](https://github.com/ramideltoro/kubequest/commit/bfe8c3c26f33c875c87e851ab84bd3197cae1f2c)
-- **Commit date:** 2026-09-19T12:40:33-04:00
-- **Change:** Add interactive visual explanations throughout the learning portal
+- **Application commit:** [80ac5bb](https://github.com/ramideltoro/kubequest/commit/80ac5bbff2d2d0bb4c5ee4d8ff8fc3e88e06e0f4)
+- **Commit date:** 2026-09-19T12:49:53-04:00
+- **Change:** Keep diagram labels aligned with comparison states
 - **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)
-- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/35455754948)
+- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/35456189545)
 
 ## Before Kubernetes
 
@@ -76,7 +76,7 @@ Reviewed teaching diagrams; these do not report live cluster state. See the [vis
 | [From your files to a working service](https://kubequest.ramideltoro.com/foundations/deploy-an-app) | Release; Server setup; Start the app; Health check | 3 | A release fails its check |
 | [A commit is not a deployment](https://kubequest.ramideltoro.com/foundations/git-history) | Working files; Local commits; Shared repository; Production | 3 | Keep a change local |
 | [Check first. Package second.](https://kubequest.ramideltoro.com/foundations/build-and-test) | Source code; Tests; Build artifact; Deployment | 3 | Fail a test |
-| [A safe path from change to release](https://kubequest.ramideltoro.com/foundations/cicd-pipelines) | Push a change; CI checks; Approved artifact; Deploy and check | 3 | Hold at a gate |
+| [A safe path from change to release](https://kubequest.ramideltoro.com/foundations/cicd-pipelines) | Push a change; CI checks; Verified artifact; Deploy and check | 3 | Hold at a gate |
 | [Same program. Different settings.](https://kubequest.ramideltoro.com/foundations/config-and-environments) | App image; Configuration; Test database; Production data | 3 | Inspect the environment |
 | [Surviving a restart is not a backup](https://kubequest.ramideltoro.com/foundations/storage-and-backups) | Memory; Saved data; Backup; Restored data | 3 | Restart the app |
 | [Build once. Run the package.](https://kubequest.ramideltoro.com/foundations/container-packages) | Code + recipe; Container image; Image registry; Running container | 3 | Image versus container |
