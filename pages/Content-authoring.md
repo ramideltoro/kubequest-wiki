@@ -49,3 +49,7 @@ Do not edit `pages/Current-release.md`, `pages/Release-history.md` or `generated
 ## Review checklist
 
 Read the lesson as a beginner, operate it using only the keyboard, check the small-screen layout, confirm correct terminology, verify source/license records, and compare each recording with the actual exercise. For changed backend behavior, add a meaningful regression check and run real-lab qualification when the VM, manifests or graders are affected.
+
+## Imported community exercises
+
+Follow the [exercise-library provenance and update procedure](Exercise-library.md) when refreshing upstream tasks. Preserve the pinned raw source and complete MIT notice, rebuild both JSON files, review changed command assumptions and stable IDs, and run content and browser checks. These tasks use a Markdown reader rather than authored mission diagrams or real-lab grading.

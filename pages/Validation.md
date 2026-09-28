@@ -61,3 +61,7 @@ An online database backup was restored to a separate file, its integrity check p
 ## When to repeat expensive checks
 
 Theme, footer and documentation updates use the normal CI/browser gate. Changes to VM construction, networking, auth, controller logic, setup manifests or graders require focused integration checks and, where affected, the complete live mission suite during an idle maintenance window. Keep sensitive maintenance tokens and real runtime evidence out of public artifacts.
+
+## Community exercise library
+
+The application suite verifies import freshness, 152 source-linked tasks, code fence handling, MIT notice preservation and safe progress parsing. Browser checks open all 152 solutions, check all on mobile for overflow, audit one solution per topic at two widths, and verify filter, reveal, progress, reload and unknown-route behavior. This validates the reading/practice interface; upstream commands have not all been executed against a cluster. See [the library guide](Exercise-library.md).

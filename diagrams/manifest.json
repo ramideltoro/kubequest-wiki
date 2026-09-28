@@ -52,9 +52,9 @@
     },
     {
       "source": "package.puml",
-      "sourceSha256": "d08f365cfebd1b1876d2e117a469287016e72d050f4adbe4527ad87f7b3312f9",
+      "sourceSha256": "5b0d81ae74f36b5731c0238be4dd79d1eb4279901c18cf14748eabf917c31984",
       "svg": "package.svg",
-      "svgSha256": "d5f4620ebc6df83223daa5c9f33950c2576f7ee0ef70aa90eacc50bc6951ed55"
+      "svgSha256": "3931b2806366a375888d541dcc53aa3b5abbaedfc0df42b2c32d33eebd4d7cc9"
     },
     {
       "source": "profile.puml",
@@ -94,9 +94,9 @@
     },
     {
       "source": "use-case.puml",
-      "sourceSha256": "25be8f73191ec7fecfd983c26dc89c34e7a181880fb747fccd5ee78265ca9ae6",
+      "sourceSha256": "e49aaa1d382120cd9fa5bcc9d2dec9e7a49092451cc91c79f7c116de55a7b8f6",
       "svg": "use-case.svg",
-      "svgSha256": "b257beb705cbbe591f325f640c44aec6e66f54721b6247eb70a36241581ed15e"
+      "svgSha256": "1ff236cf4d679e153885fa087e07de301bc2ab5526bb293f17c5c984496d45f4"
     }
   ]
 }

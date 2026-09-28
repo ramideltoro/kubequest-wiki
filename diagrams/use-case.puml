@@ -79,6 +79,7 @@ rectangle KubeQuest {
  (Read lessons and wiki) as Read
  (Explore browser simulations) as Sim
  (Save progress on this device) as Local
+ (Read community exercises and solutions) as Exercises
  (Watch captioned walkthroughs) as Video
  (Authenticate verified Google account) as Auth
  (Practice in a live VM) as Lab
@@ -90,6 +91,8 @@ Visitor --> Read
 Visitor --> Sim
 Visitor --> Local
 Visitor --> Video
+Visitor --> Exercises
+Exercises ..> Local : self-reported practice
 Owner --> Auth
 Google --> Auth
 Owner --> Lab

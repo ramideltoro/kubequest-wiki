@@ -34,6 +34,14 @@ text +=
   "\n## Practice missions\n\n| Mission | Domain | Minutes | Requirements |\n| --- | --- | --- | --- |\n";
 for (const m of s.missions)
   text += `| [${safe(m.title)}](https://kubequest.ramideltoro.com/ckad/${m.id}) | ${safe(m.domain)} | ${m.minutes} | ${m.objectives.map(safe).join("; ")} |\n`;
+if (s.exerciseLibrary) {
+  const library = s.exerciseLibrary;
+  text += "\n## Community exercise library\n\n" + library.count + " public, self-guided exercises; progress is self-reported. [Library guide](Exercise-library.md). Imported source revision: \x60" + safe(library.source.revision) + "\x60.\n\n| Topic | Exercises |\n| --- | ---: |\n";
+  for (const topic of library.topics) {
+    if (!/^[a-z0-9-]+$/.test(topic.id)) throw Error("Invalid exercise topic");
+    text += "| [" + safe(topic.title) + "](https://kubequest.ramideltoro.com/ckad/exercises?topic=" + topic.id + ") | " + topic.count + " |\n";
+  }
+}
 if (s.visuals?.length) {
   text += "\n## Visual learning library\n\nReviewed teaching diagrams; these do not report live cluster state. See the [visual learning guide](Visual-learning.md) for interaction, accessibility, and authoring details.\n\n| Diagram | Parts | Connections | Comparison |\n| --- | --- | --- | --- |\n";
   for (const v of s.visuals) {

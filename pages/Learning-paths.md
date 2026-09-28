@@ -45,10 +45,14 @@ A timed attempt is a practice constraint, not an official exam proctoring system
 
 ![Interaction overview: choose Basics or CKAD, authenticate when needed, and practice](diagrams/interaction-overview.svg)
 
+## Community exercises
+
+The [exercise library](Exercise-library.md) adds 152 public tasks across 10 topics from dgkanatsios/CKAD-exercises, with documentation, hidden solutions, search, topic/status filters and local progress. Practice in your own disposable environment; these tasks are separate from owner-only graded missions. Historical source groupings are not current exam weights.
+
 ## Suggested courses
 
 Each catalog and lesson includes optional reviewed links. Foundation recommendations use MDN, GitHub Skills, Linux Foundation Linux training, the Git book, Docker tutorials and Cloudflare explainers. Kubernetes Basics points to Linux Foundation introductory training and official Kubernetes tutorials. CKAD Practice includes developer training and official task references, with paid courses labeled. These links do not grant live lab access or imply complete exam coverage.
 
 ## Finding content
 
-The footer follows the compact NutsNews layout: circular Home, Search and Site menu shortcuts, a navigation pill, and the copyright line. Search covers the sixteen foundation chapters, fourteen Kubernetes lessons and eight missions locally. The Readme gives a short project overview; this wiki provides implementation and operational detail.
+The footer follows the compact NutsNews layout: circular Home, Search and Site menu shortcuts, a navigation pill, and the copyright line. Search covers the sixteen foundation chapters, fourteen Kubernetes lessons, eight missions and 152 community exercises locally. The Readme gives a short project overview; this wiki provides implementation and operational detail.

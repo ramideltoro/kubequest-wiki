@@ -48,3 +48,7 @@ Session state is in memory; VM disks and process records are disposable files in
 ## Versioning
 
 Lesson and mission IDs are durable keys. Avoid renaming them after users have saved progress. Source definitions and validator changes are versioned with Git commits. `/healthz` reports the full deployment revision from `RELEASE.json`, allowing CI to verify that the public hostname serves the intended build. Schema-changing releases need an explicit migration and rollback plan; the current pipeline does not silently rewrite schema history.
+
+## Community exercise state
+
+The [public exercise library](Exercise-library.md) uses static imported content and the independent `kubequest-exercises-v1` browser-storage key for self-reported practiced/review status. It does not add endpoints, alter SQLite progress, or submit grades. Search filters live in URL parameters, and the source revision is pinned in content metadata.

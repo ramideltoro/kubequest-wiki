@@ -78,7 +78,11 @@ package infra as Infra
 package scripts as Scripts
 package tests as Tests
 package ".github/workflows" as Workflows
-UI --> Content : lessons / missions
+UI --> Content : lessons / missions / exercise index
+package "pinned CKAD source (MIT)" as Upstream
+Scripts --> Upstream : parse reviewed snapshot
+Scripts --> Content : generate exercise library
+UI --> Content : lazy-load solutions
 UI ..> Wiki : external documentation link
 UI --> Assets : local artwork / videos
 Server --> Content : known missions / solutions
