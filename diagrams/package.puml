@@ -82,7 +82,10 @@ UI --> Content : lessons / missions / exercise index
 package "pinned CKAD source (MIT)" as Upstream
 Scripts --> Upstream : parse reviewed snapshot
 Scripts --> Content : generate exercise library
-UI --> Content : lazy-load solutions
+UI --> Content : lazy-load solutions / guided curriculum
+package "reviewed MIT / Apache practice sources" as PracticeSources
+Content ..> PracticeSources : four adapted gap lessons / pinned attribution
+Tests --> Content : prerequisite / index / lesson checks
 UI ..> Wiki : external documentation link
 UI --> Assets : local artwork / videos
 Server --> Content : known missions / solutions

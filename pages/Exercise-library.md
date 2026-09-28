@@ -44,3 +44,7 @@ Markdown renders through `react-markdown` and `remark-gfm` with raw HTML disable
 ## Verification
 
 `npm test` checks regeneration freshness, all 152 source locations, topic counts, license preservation, fenced-code parsing and corrupt progress recovery. `scripts/exercise-checks.mjs`, included in `npm run test:browser`, opens every task and solution, checks every solution for mobile overflow, and audits the library plus one solution per topic for WCAG violations at desktop/mobile sizes. It also verifies filtering, empty/unknown states, solution disclosure, reload persistence and My Progress integration. These checks validate content delivery and UI behavior; they do not claim every historical upstream command has been executed against Kubernetes.
+
+## Focused guided practice
+
+The [guided curriculum](Guided-practice.md) adds four distinct practice objectives: Kustomize overlays, namespaced RBAC boundaries, startup-probe troubleshooting and JSONPath reporting. It links existing prerequisites instead of duplicating the 152 tasks. The guide documents the overlap audit, pinned MIT/Apache sources, separate local progress, learning sequence and validation limits.

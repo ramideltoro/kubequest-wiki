@@ -56,3 +56,7 @@ Each catalog and lesson includes optional reviewed links. Foundation recommendat
 ## Finding content
 
 The footer follows the compact NutsNews layout: circular Home, Search and Site menu shortcuts, a navigation pill, and the copyright line. Search covers the sixteen foundation chapters, fourteen Kubernetes lessons, eight missions and 152 community exercises locally. The Readme gives a short project overview; this wiki provides implementation and operational detail.
+
+## Focused guided practice
+
+The [guided curriculum](Guided-practice.md) adds four distinct practice objectives: Kustomize overlays, namespaced RBAC boundaries, startup-probe troubleshooting and JSONPath reporting. It links existing prerequisites instead of duplicating the 152 tasks. The guide documents the overlap audit, pinned MIT/Apache sources, separate local progress, learning sequence and validation limits.

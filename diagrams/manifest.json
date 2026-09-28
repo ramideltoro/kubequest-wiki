@@ -52,9 +52,9 @@
     },
     {
       "source": "package.puml",
-      "sourceSha256": "5b0d81ae74f36b5731c0238be4dd79d1eb4279901c18cf14748eabf917c31984",
+      "sourceSha256": "e4f7cf0e4f1536f508c150db247b9580b7f1d9ec01124e8c7751e18a53837b50",
       "svg": "package.svg",
-      "svgSha256": "3931b2806366a375888d541dcc53aa3b5abbaedfc0df42b2c32d33eebd4d7cc9"
+      "svgSha256": "1535bc0a1dea4c9f6a9a45f4c62786b76b90ca906e9b5fa91e25d860253aa754"
     },
     {
       "source": "profile.puml",

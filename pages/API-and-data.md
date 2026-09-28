@@ -52,3 +52,7 @@ Lesson and mission IDs are durable keys. Avoid renaming them after users have sa
 ## Community exercise state
 
 The [public exercise library](Exercise-library.md) uses static imported content and the independent `kubequest-exercises-v1` browser-storage key for self-reported practiced/review status. It does not add endpoints, alter SQLite progress, or submit grades. Search filters live in URL parameters, and the source revision is pinned in content metadata.
+
+## Focused guided practice
+
+The [guided curriculum](Guided-practice.md) adds four distinct practice objectives: Kustomize overlays, namespaced RBAC boundaries, startup-probe troubleshooting and JSONPath reporting. It links existing prerequisites instead of duplicating the 152 tasks. The guide documents the overlap audit, pinned MIT/Apache sources, separate local progress, learning sequence and validation limits.

@@ -65,3 +65,7 @@ Theme, footer and documentation updates use the normal CI/browser gate. Changes 
 ## Community exercise library
 
 The application suite verifies import freshness, 152 source-linked tasks, code fence handling, MIT notice preservation and safe progress parsing. Browser checks open all 152 solutions, check all on mobile for overflow, audit one solution per topic at two widths, and verify filter, reveal, progress, reload and unknown-route behavior. This validates the reading/practice interface; upstream commands have not all been executed against a cluster. See [the library guide](Exercise-library.md).
+
+## Focused guided practice
+
+The [guided curriculum](Guided-practice.md) adds four distinct practice objectives: Kustomize overlays, namespaced RBAC boundaries, startup-probe troubleshooting and JSONPath reporting. It links existing prerequisites instead of duplicating the 152 tasks. The guide documents the overlap audit, pinned MIT/Apache sources, separate local progress, learning sequence and validation limits.
