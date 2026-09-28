@@ -2,11 +2,11 @@
 
 This page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.
 
-- **Application commit:** [030d733](https://github.com/ramideltoro/kubequest/commit/030d73380b84b8da263ed69c1e26a85f5b44834d)
-- **Commit date:** 2026-09-27T21:32:13-04:00
-- **Change:** Add four guided CKAD lessons that fill existing practice gaps (#9)
+- **Application commit:** [29775ec](https://github.com/ramideltoro/kubequest/commit/29775ecb4946921693d81572d439c80d79e64f92)
+- **Commit date:** 2026-09-28T17:30:24-04:00
+- **Change:** Convert all CKAD exercises into mission labs with public walkthroughs (#10)
 - **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)
-- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/36366345268)
+- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/36486545198)
 
 ## Before Kubernetes
 
@@ -63,7 +63,7 @@ This page is generated from the exact KubeQuest commit deployed to the server. I
 
 ## Community exercise library
 
-152 public, self-guided exercises; progress is self-reported. [Library guide](Exercise-library.md). Imported source revision: `d7b9a5c28b2ff2d8a8fab5524569956f21aaa1b4`.
+152 public exercise missions with signed-in graded labs; browser practice notes remain self-reported. [Library guide](Exercise-library.md). Imported source revision: `d7b9a5c28b2ff2d8a8fab5524569956f21aaa1b4`.
 
 | Topic | Exercises |
 | --- | ---: |
@@ -77,6 +77,169 @@ This page is generated from the exact KubeQuest commit deployed to the server. I
 | [Helm](https://kubequest.ramideltoro.com/ckad/exercises?topic=helm) | 10 |
 | [Custom resources](https://kubequest.ramideltoro.com/ckad/exercises?topic=custom-resources) | 4 |
 | [Container images (Podman)](https://kubequest.ramideltoro.com/ckad/exercises?topic=container-images) | 12 |
+
+## Exercise and guided labs
+
+Public situations, diagrams, solutions and captioned walkthroughs. Running a disposable lab requires authorized sign-in.
+
+| Lab | Topic | Objectives |
+| --- | --- | --- |
+| [A home for the first Pod](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-9fe4b7befc3e) | Core concepts | nginx uses the provided nginx image; The Pod is Ready |
+| [Declare the namespaced Pod](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-46382324b97f) | Core concepts | nginx uses the provided nginx image; The Pod is Ready |
+| [Read a container’s environment](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-30a3e4723da4) | Core concepts | The env process completed; The saved evidence contains the requested result |
+| [Declare an environment inspection](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-498eb2350d82) | Core concepts | The env process completed; The saved evidence contains the requested result |
+| [Preview a namespace](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-6859cb9f987c) | Core concepts | namespace.yaml declares myns; myns was not created |
+| [Budget before admission](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-b5617fdaea63) | Core concepts | The quota file contains all three limits; The quota is not active |
+| [Look beyond the current namespace](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-fb1d8a1a19d6) | Core concepts | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Declare a web port](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-c0a84a627e7f) | Core concepts | Port 80 is declared; The Pod is Ready |
+| [Change the running image](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-64c97433112f) | Core concepts | The requested image is in the spec; The running container reports the new image |
+| [Reach a Pod by IP](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-f44e364f1cfd) | Core concepts | The client completed its request; The saved evidence contains the requested result |
+| [Inspect the desired object](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-4513a7a2b0d9) | Core concepts | pod.yaml contains the real Pod identity |
+| [Explain a waiting workload](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-89c8c63d629c) | Core concepts | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Read application output](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-e5a88a4a02dc) | Core concepts | The saved evidence contains the requested result |
+| [Recover the previous logs](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-6c4359ff0c03) | Core concepts | The saved evidence contains the requested result |
+| [Open a shell in the container](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-7b9d88de80a8) | Core concepts | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Finish a one-shot Pod](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-c7716ab3c79b) | Core concepts | The Pod succeeded; The saved evidence contains the requested result |
+| [Run a disposable command](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-a3e184ead16d) | Core concepts | The saved evidence contains the requested result; The temporary Pod is gone |
+| [Inject a container variable](https://kubequest.ramideltoro.com/ckad/exercises/core-concepts-314d16e6bd4e) | Core concepts | var1 is declared correctly; The saved evidence contains the requested result |
+| [Choose the right container](https://kubequest.ramideltoro.com/ckad/exercises/multi-container-pods-b17c25b2c8e7) | Multi-container Pods | Both containers are defined; The second container can execute commands; The saved evidence contains the requested result |
+| [Publish the init container’s page](https://kubequest.ramideltoro.com/ckad/exercises/multi-container-pods-189ad413452d) | Multi-container Pods | An init container and emptyDir are configured; The shared page is served |
+| [Label the web fleet](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-37f7507a9fa2) | Pod design | Three named Pods carry app=v1; All fleet labels match |
+| [Inspect the fleet labels](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-bdfa22153e9c) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Relabel one replica](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-595fd3f0a021) | Pod design | nginx2 is v2; The other Pods stay v1 |
+| [Make labels a report column](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-15652f1dd3e8) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Select the new version](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-6d1e95383349) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Combine inclusion and exclusion](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-f3509c39a308) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Label a set of versions](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-57be32fa1342) | Pod design | All three Pods are in tier web |
+| [Record ownership](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-2b45f7cefe0b) | Pod design | The selected Pod has an owner; The unselected Pod is unchanged |
+| [Remove a stale label](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-507ce0884753) | Pod design | All three app labels are removed |
+| [Describe the fleet](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-90b5a5ea06c7) | Pod design | All descriptions are present |
+| [Read an annotation](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-68e60bafef59) | Pod design | The saved evidence contains the requested result |
+| [Clear the annotation](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-5964954756c7) | Pod design | The annotation is absent |
+| [Clean up the fleet](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-04b4dee77490) | Pod design | nginx1 is deleted; nginx2 is deleted; nginx3 is deleted |
+| [Schedule by a node label](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-3f78ce59b4e5) | Pod design | The selector is configured; The Pod is Ready |
+| [Choose the node directly](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-0ccd9d47b8f9) | Pod design | The Pod is bound to the practice node; The Pod is Ready |
+| [Tolerate the scheduling boundary](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-acbf8c02347c) | Pod design | The Pod tolerates the taint; The node retains the taint; The Pod is Ready |
+| [Combine selection with permission](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-248c76a858eb) | Pod design | The target selector is present; The target taint is tolerated; The Pod is Ready |
+| [Declare the application Deployment](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-973f33289f82) | Pod design | The requested image is configured; The desired replicas are available |
+| [Read the Deployment manifest](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-42f3676ecebd) | Pod design | The saved evidence contains the requested result |
+| [Inspect the owned ReplicaSet](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-dac437fcac74) | Pod design | The saved evidence contains the requested result |
+| [Inspect a managed Pod](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-a922504e884b) | Pod design | The saved evidence contains the requested result |
+| [Wait for a release](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-7b48343af726) | Pod design | The saved evidence contains the requested result |
+| [Release the next image](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-985f76e6e2f9) | Pod design | The requested image is configured; The desired replicas are available |
+| [Read the release history](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-16ee42834b04) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Undo the last release](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-19963b26c7e8) | Pod design | The requested image is configured; The desired replicas are available |
+| [Introduce a broken release](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-9feccab0a17e) | Pod design | The requested image is configured |
+| [Diagnose the stalled rollout](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-5f9c9acd7a6a) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Return to a chosen revision](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-d34f2c9fd53f) | Pod design | The requested image is configured; The desired replicas are available |
+| [Inspect one historical template](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-f2f6f368987e) | Pod design | The saved evidence contains the requested result |
+| [Scale the application](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-7e6e4d7574a7) | Pod design | The desired replicas are available |
+| [Define autoscaling bounds](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-f4c92bdbb014) | Pod design | The HPA targets nginx with the requested bounds; The target utilization is 80 percent |
+| [Pause release reconciliation](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-232feff34a3e) | Pod design | The rollout is paused |
+| [Change a paused template](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-b83f4b5782a6) | Pod design | The requested image is configured; The rollout stays paused; Running Pods retain the old image |
+| [Resume the queued release](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-375f2201d654) | Pod design | The requested image is configured; The desired replicas are available; The rollout is resumed |
+| [Remove the scaling workload](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-bcb93c95624c) | Pod design | The Deployment is removed; The HPA is removed |
+| [Share traffic with a canary](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-5756e6dd2543) | Pod design | Stable has three replicas; Canary has one replica; The Service selects both versions |
+| [Calculate with a Job](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-17e67c060d89) | Pod design | The pi Job completed; The result begins with pi |
+| [Collect the completed result](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-4a8595435c50) | Pod design | The saved evidence contains the requested result |
+| [Run a staged task](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-8342e4408766) | Pod design | The hello Job completed |
+| [Follow the worker logs](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-4ac9e50b3065) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Inspect work and its output](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-daa19a08679d) | Pod design | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Remove completed work](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-d1ea21d3e064) | Pod design | The Job is removed |
+| [Repeat the Job sequentially](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-422b71cc3116) | Pod design | The completion and parallelism policy matches; Five runs succeeded |
+| [Run completions in parallel](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-30965b7fb4fe) | Pod design | The completion and parallelism policy matches; Five runs succeeded |
+| [Bound a Job’s running time](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-3c827507142a) | Pod design | The deadline is configured; The Job stopped at its deadline |
+| [Schedule a recurring task](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-b9a8beee7468) | Pod design | The minute schedule is configured; The task command is defined |
+| [Keep the scheduled output](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-326c7efa4cb4) | Pod design | The saved evidence contains the requested result; The CronJob is removed |
+| [Inspect a scheduled run](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-ff45a0c70050) | Pod design | The saved evidence contains the requested result; The CronJob is removed |
+| [Limit a missed start](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-0a4a1211a3b1) | Pod design | The scheduling deadline is 17 seconds |
+| [Limit each scheduled run](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-e3c31cdd1946) | Pod design | Each Job has a 12-second active deadline |
+| [Retain a small run history](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-f0fb2d09de1f) | Pod design | The history limits are set |
+| [Run the schedule on demand](https://kubequest.ramideltoro.com/ckad/exercises/pod-design-7ebc6a86cb1f) | Pod design | The manual Job completed; The output matches the schedule |
+| [Store two configuration values](https://kubequest.ramideltoro.com/ckad/exercises/configuration-c27d125de6f8) | Configuration | Both values are stored |
+| [Inspect configuration data](https://kubequest.ramideltoro.com/ckad/exercises/configuration-b318ed070cdc) | Configuration | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Load a configuration file](https://kubequest.ramideltoro.com/ckad/exercises/configuration-6bb39c927302) | Configuration | The resulting data has the expected shape |
+| [Load environment-style settings](https://kubequest.ramideltoro.com/ckad/exercises/configuration-0b3877bf80d8) | Configuration | The resulting data has the expected shape |
+| [Choose the ConfigMap key](https://kubequest.ramideltoro.com/ckad/exercises/configuration-552fe2c83f71) | Configuration | The resulting data has the expected shape |
+| [Map one configuration key](https://kubequest.ramideltoro.com/ckad/exercises/configuration-c167ab2b2c47) | Configuration | The reference points to options/var5; The application receives val5 |
+| [Import a group of settings](https://kubequest.ramideltoro.com/ckad/exercises/configuration-0716914d43a8) | Configuration | The Pod imports anotherone; Both values reach the container |
+| [Mount settings as files](https://kubequest.ramideltoro.com/ckad/exercises/configuration-1f0362c12877) | Configuration | The mounted files have the supplied values |
+| [Specify a process identity](https://kubequest.ramideltoro.com/ckad/exercises/configuration-18ba5b39bc81) | Configuration | The manifest has the requested security context; The manifest was not applied |
+| [Declare Linux capabilities](https://kubequest.ramideltoro.com/ckad/exercises/configuration-30413a9484f7) | Configuration | The manifest has the requested security context; The manifest was not applied |
+| [Reserve and limit resources](https://kubequest.ramideltoro.com/ckad/exercises/configuration-80be07de3cde) | Configuration | CPU requests and limits are set; Memory requests and limits are set |
+| [Set namespace admission bounds](https://kubequest.ramideltoro.com/ckad/exercises/configuration-82621d7ef845) | Configuration | The Pod memory bounds are set |
+| [Inspect namespace policy](https://kubequest.ramideltoro.com/ckad/exercises/configuration-23863970ab48) | Configuration | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Fit within the allowed range](https://kubequest.ramideltoro.com/ckad/exercises/configuration-b2ff37e4abbf) | Configuration | The memory request is 250Mi; The Pod is Ready |
+| [Budget the namespace](https://kubequest.ramideltoro.com/ckad/exercises/configuration-240625f4e44a) | Configuration | Requests fit the specified quota; Limits fit the specified quota |
+| [Explain an admission rejection](https://kubequest.ramideltoro.com/ckad/exercises/configuration-d318edcc44b9) | Configuration | The saved evidence contains the requested result; The over-budget Pod was not admitted |
+| [Admit a workload within quota](https://kubequest.ramideltoro.com/ckad/exercises/configuration-93c607239c96) | Configuration | The declared resources match the budget; The Pod is Ready |
+| [Create a practice Secret](https://kubequest.ramideltoro.com/ckad/exercises/configuration-facb0bc27a56) | Configuration | The Secret contains the practice password |
+| [Create a Secret from a file](https://kubequest.ramideltoro.com/ckad/exercises/configuration-800020510cb6) | Configuration | The file is stored under username |
+| [Decode the practice value](https://kubequest.ramideltoro.com/ckad/exercises/configuration-cbda172d940d) | Configuration | The saved evidence contains the requested result |
+| [Mount a Secret file](https://kubequest.ramideltoro.com/ckad/exercises/configuration-76840b9115ac) | Configuration | The mounted file exposes the practice value |
+| [Switch Secret consumption style](https://kubequest.ramideltoro.com/ckad/exercises/configuration-5c1870eb99ab) | Configuration | The env reference is present; USERNAME contains the practice value |
+| [Scope a Secret to its consumer](https://kubequest.ramideltoro.com/ckad/exercises/configuration-efc409e4f8dd) | Configuration | The namespaced key is present |
+| [Deliver a Secret to the process](https://kubequest.ramideltoro.com/ckad/exercises/configuration-29300ee8ebe5) | Configuration | The Pod references the Secret; The saved evidence contains the requested result |
+| [Declare an SSH-auth Secret](https://kubequest.ramideltoro.com/ckad/exercises/configuration-8f029585a7e8) | Configuration | Type and key are correct |
+| [Mount a typed Secret](https://kubequest.ramideltoro.com/ckad/exercises/configuration-48e7cab49f7c) | Configuration | The mount is read-only; The saved evidence contains the requested result |
+| [Inventory workload identities](https://kubequest.ramideltoro.com/ckad/exercises/configuration-3bc403c2d6b6) | Configuration | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Create a workload identity](https://kubequest.ramideltoro.com/ckad/exercises/configuration-b6a5c8dfd561) | Configuration | myuser exists |
+| [Assign the workload identity](https://kubequest.ramideltoro.com/ckad/exercises/configuration-5829be3df80e) | Configuration | nginx uses myuser; The Pod is Ready |
+| [Request a short-lived API token](https://kubequest.ramideltoro.com/ckad/exercises/configuration-b1bad0cd91e1) | Configuration | A JWT-shaped token was saved; The token belongs to myuser |
+| [Declare a liveness check](https://kubequest.ramideltoro.com/ckad/exercises/observability-dfe4918a2044) | Observability | The exec probe is configured; The probe timing matches; The Pod is Ready |
+| [Tune probe timing](https://kubequest.ramideltoro.com/ckad/exercises/observability-80cd6dcef6bc) | Observability | The exec probe is configured; The probe timing matches; The Pod is Ready |
+| [Gate traffic on HTTP readiness](https://kubequest.ramideltoro.com/ckad/exercises/observability-533bdca201e2) | Observability | The HTTP readiness endpoint is correct; The Pod is Ready |
+| [Find failing health checks](https://kubequest.ramideltoro.com/ckad/exercises/observability-cc9dcedee601) | Observability | The saved evidence contains the requested result |
+| [Read a changing log stream](https://kubequest.ramideltoro.com/ckad/exercises/observability-e3ecade1e2ea) | Observability | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Investigate a missing path](https://kubequest.ramideltoro.com/ckad/exercises/observability-bd666beda2cb) | Observability | The saved evidence contains the requested result; The failed Pod is removed |
+| [Investigate a missing executable](https://kubequest.ramideltoro.com/ckad/exercises/observability-e9b29e7f92d6) | Observability | The saved evidence contains the requested result; The failed Pod is removed |
+| [Read node resource usage](https://kubequest.ramideltoro.com/ckad/exercises/observability-81c0ce5fbdb0) | Observability | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Expose the web Pod](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-7cd99a0ac81c) | Services and networking | The Service has the correct selector; The Service returns an HTTP response |
+| [Inspect Service endpoints](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-a9071e9af8b1) | Services and networking | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Request the Service IP](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-bda0945b807f) | Services and networking | The saved evidence contains the requested result; The client request completed |
+| [Reach a NodePort](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-3c8f38af34c6) | Services and networking | The Service has a NodePort; The saved evidence contains the requested result |
+| [Prepare a hostname service](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-dbfc0999ebba) | Services and networking | Three replicas are available; The image and port are configured; No Service has been created |
+| [Contact each replica directly](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-7b4bb0108f61) | Services and networking | The saved evidence contains the requested result; Each running Pod appears in the report |
+| [Map the application port](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-4bf5b692c64c) | Services and networking | The port mapping is correct; The Service returns an HTTP response |
+| [Sample traffic across replicas](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-e847f2f1491a) | Services and networking | The saved evidence contains the requested result; More than one replica answered |
+| [Restrict ingress to approved clients](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-a3056a84e7d8) | Services and networking | The approved client can connect; The unapproved client is blocked |
+| [Route an HTTP path](https://kubequest.ramideltoro.com/ckad/exercises/services-networking-220b10897573) | Services and networking | The rule points at nginx; The controller routes the request |
+| [Share a file within one Pod](https://kubequest.ramideltoro.com/ckad/exercises/state-persistence-f14ded9c4d31) | State persistence | An emptyDir backs the shared mount; The first container reads the written file |
+| [Offer a static volume](https://kubequest.ramideltoro.com/ckad/exercises/state-persistence-62c5b08b6401) | State persistence | The PV has the expected capacity and class; Both access modes are declared |
+| [Bind a storage claim](https://kubequest.ramideltoro.com/ckad/exercises/state-persistence-6e4927ffaf92) | State persistence | The claim bound to myvolume; The requested capacity is 4Gi |
+| [Write through the claim](https://kubequest.ramideltoro.com/ckad/exercises/state-persistence-9b5571617d59) | State persistence | The Pod mounts mypvc; The file was copied to the mounted volume |
+| [Read the persisted file elsewhere](https://kubequest.ramideltoro.com/ckad/exercises/state-persistence-557b44434396) | State persistence | The reader references the same claim; The saved evidence contains the requested result |
+| [Copy a file out of the container](https://kubequest.ramideltoro.com/ckad/exercises/state-persistence-d11d90dc5f93) | State persistence | The copied file matches the container |
+| [Scaffold a Helm chart](https://kubequest.ramideltoro.com/ckad/exercises/helm-e2c42ac9f9fa) | Helm | The chart has metadata and templates |
+| [Install a chart with values](https://kubequest.ramideltoro.com/ckad/exercises/helm-f0e0d766e5cc) | Helm | Two web replicas are available; Helm reports the release deployed |
+| [Find pending releases](https://kubequest.ramideltoro.com/ckad/exercises/helm-549a8e435eba) | Helm | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Uninstall the release](https://kubequest.ramideltoro.com/ckad/exercises/helm-49c8f3a48a65) | Helm | The Deployment is gone; The release is absent |
+| [Layer values for an upgrade](https://kubequest.ramideltoro.com/ckad/exercises/helm-1577f597a0bd) | Helm | The override produces three available replicas; Helm stores the merged replica value |
+| [Manage a chart repository](https://kubequest.ramideltoro.com/ckad/exercises/helm-f6b7be3f958c) | Helm | The local repository is registered; The saved evidence contains the requested result |
+| [Download without installing](https://kubequest.ramideltoro.com/ckad/exercises/helm-bbba15a6304b) | Helm | The downloaded chart is valid; No Deployment was installed |
+| [Add a repository by name](https://kubequest.ramideltoro.com/ckad/exercises/helm-f92cbe0a5a34) | Helm | catalog points to the supplied repository |
+| [Inspect chart defaults](https://kubequest.ramideltoro.com/ckad/exercises/helm-94840f9d566c) | Helm | The saved evidence contains the requested result; The saved evidence contains the requested result |
+| [Override replicas during install](https://kubequest.ramideltoro.com/ckad/exercises/helm-0b7d0c5d4101) | Helm | Five replicas are available |
+| [Describe a custom API](https://kubequest.ramideltoro.com/ckad/exercises/custom-resources-b854e760ce17) | Custom resources | The manifest defines the required names and schema; The CRD is not installed yet |
+| [Register the custom API](https://kubequest.ramideltoro.com/ckad/exercises/custom-resources-6e678c4dd728) | Custom resources | The CRD is established |
+| [Create an instance of the custom type](https://kubequest.ramideltoro.com/ckad/exercises/custom-resources-62a9622546dd) | Custom resources | The custom object has the supplied fields |
+| [Discover the resource aliases](https://kubequest.ramideltoro.com/ckad/exercises/custom-resources-48e4ec121f3f) | Custom resources | The saved evidence contains the requested result |
+| [Package a custom homepage](https://kubequest.ramideltoro.com/ckad/exercises/container-images-d43ab80e8740) | Container images (Podman) | The Dockerfile declares httpd and the custom page |
+| [Build and inspect image layers](https://kubequest.ramideltoro.com/ckad/exercises/container-images-1f9d206bd6b7) | Container images (Podman) | The image exists; The saved evidence contains the requested result |
+| [Run and test the image](https://kubequest.ramideltoro.com/ckad/exercises/container-images-52068ec01497) | Container images (Podman) | test is running; The saved evidence contains the requested result |
+| [Inspect the container’s page](https://kubequest.ramideltoro.com/ckad/exercises/container-images-ac5001169e7a) | Container images (Podman) | The saved evidence contains the requested result |
+| [Publish to the lab registry](https://kubequest.ramideltoro.com/ckad/exercises/container-images-1f8a476cb71a) | Container images (Podman) | The registry exposes the pushed manifest |
+| [Create without starting](https://kubequest.ramideltoro.com/ckad/exercises/container-images-e3eb6e9b9907) | Container images (Podman) | parked exists but is not running |
+| [Export a container filesystem](https://kubequest.ramideltoro.com/ckad/exercises/container-images-a8392159fb28) | Container images (Podman) | The archive contains the container filesystem |
+| [Pull the published image into Kubernetes](https://kubequest.ramideltoro.com/ckad/exercises/container-images-6e1079117d58) | Container images (Podman) | The Pod is Ready; The Pod serves the built page |
+| [Log in to the private fixture](https://kubequest.ramideltoro.com/ckad/exercises/container-images-43b95a3170bf) | Container images (Podman) | The auth file names the registry |
+| [Make image-pull credentials](https://kubequest.ramideltoro.com/ckad/exercises/container-images-b4f392c395d5) | Container images (Podman) | The file-based Secret has the correct type; The CLI Secret targets the local registry |
+| [Use a private registry Secret](https://kubequest.ramideltoro.com/ckad/exercises/container-images-0442ba5ba29b) | Container images (Podman) | The Pod references the pull Secret; The Pod is Ready |
+| [Clean the container workspace](https://kubequest.ramideltoro.com/ckad/exercises/container-images-5dbe478b1ac2) | Container images (Podman) | No Podman containers remain; No Podman images remain; The Kubernetes Pod is removed |
+| [One base, two environments](https://kubequest.ramideltoro.com/ckad/curriculum/kustomize-overlays) | Application deployment | Staging renders the requested deployment; The base remains one replica |
+| [Grant exactly the access needed](https://kubequest.ramideltoro.com/ckad/curriculum/rbac-boundaries) | Environment, configuration and security | The identity can watch Pods; The identity cannot delete Pods; Secrets and other namespaces stay inaccessible |
+| [Give a slow application time to start](https://kubequest.ramideltoro.com/ckad/curriculum/startup-probe-budget) | Observability and maintenance | The startup budget is configured; The liveness check remains intact; A restart occurred and readiness recovered |
+| [Turn cluster objects into a useful report](https://kubequest.ramideltoro.com/ckad/curriculum/jsonpath-reports) | Observability and maintenance | The report has the exact rows and separators |
 
 ## Visual learning library
 
