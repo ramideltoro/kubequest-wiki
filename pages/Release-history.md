@@ -1,9 +1,10 @@
 # Release history
 
-The current live application is [1d05083](https://github.com/ramideltoro/kubequest/commit/1d0508321869a56684050c207e7d86eeaf9bc511). This history records source revisions published through the release integration. Rollback changes the current reference; earlier records remain available.
+The current live application is [030d733](https://github.com/ramideltoro/kubequest/commit/030d73380b84b8da263ed69c1e26a85f5b44834d). This history records source revisions published through the release integration. Rollback changes the current reference; earlier records remain available.
 
 | Commit | Commit date | Change | Pipeline |
 | --- | --- | --- | --- |
+| [030d733](https://github.com/ramideltoro/kubequest/commit/030d73380b84b8da263ed69c1e26a85f5b44834d) | 2026-09-27T21:32:13-04:00 | Add four guided CKAD lessons that fill existing practice gaps (#9) | [Run](https://github.com/ramideltoro/kubequest/actions/runs/36366345268) |
 | [1d05083](https://github.com/ramideltoro/kubequest/commit/1d0508321869a56684050c207e7d86eeaf9bc511) | 2026-09-27T20:29:37-04:00 | Add 152 community CKAD exercises with solutions and local progress | [Run](https://github.com/ramideltoro/kubequest/actions/runs/36362471361) |
 | [80ac5bb](https://github.com/ramideltoro/kubequest/commit/80ac5bbff2d2d0bb4c5ee4d8ff8fc3e88e06e0f4) | 2026-09-19T12:49:53-04:00 | Keep diagram labels aligned with comparison states | [Run](https://github.com/ramideltoro/kubequest/actions/runs/35456189545) |
 | [bfe8c3c](https://github.com/ramideltoro/kubequest/commit/bfe8c3c26f33c875c87e851ab84bd3197cae1f2c) | 2026-09-19T12:40:33-04:00 | Add interactive visual explanations throughout the learning portal | [Run](https://github.com/ramideltoro/kubequest/actions/runs/35455754948) |

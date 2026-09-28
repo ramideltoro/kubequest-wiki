@@ -2,11 +2,11 @@
 
 This page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.
 
-- **Application commit:** [1d05083](https://github.com/ramideltoro/kubequest/commit/1d0508321869a56684050c207e7d86eeaf9bc511)
-- **Commit date:** 2026-09-27T20:29:37-04:00
-- **Change:** Add 152 community CKAD exercises with solutions and local progress
+- **Application commit:** [030d733](https://github.com/ramideltoro/kubequest/commit/030d73380b84b8da263ed69c1e26a85f5b44834d)
+- **Commit date:** 2026-09-27T21:32:13-04:00
+- **Change:** Add four guided CKAD lessons that fill existing practice gaps (#9)
 - **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)
-- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/36362471361)
+- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/36366345268)
 
 ## Before Kubernetes
 
