@@ -2,11 +2,11 @@
 
 This page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.
 
-- **Application commit:** [80ac5bb](https://github.com/ramideltoro/kubequest/commit/80ac5bbff2d2d0bb4c5ee4d8ff8fc3e88e06e0f4)
-- **Commit date:** 2026-09-19T12:49:53-04:00
-- **Change:** Keep diagram labels aligned with comparison states
+- **Application commit:** [1d05083](https://github.com/ramideltoro/kubequest/commit/1d0508321869a56684050c207e7d86eeaf9bc511)
+- **Commit date:** 2026-09-27T20:29:37-04:00
+- **Change:** Add 152 community CKAD exercises with solutions and local progress
 - **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)
-- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/35456189545)
+- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/36362471361)
 
 ## Before Kubernetes
 
@@ -60,6 +60,23 @@ This page is generated from the exact KubeQuest commit deployed to the server. I
 | [The report that disappeared](https://kubequest.ramideltoro.com/ckad/report-that-disappeared) | Application Design & Build | 20 | Use the existing Bound reports PersistentVolumeClaim.; Make daily-report mount reports at /data.; Complete the Job successfully.; Read DAILY\_REPORT from report-reader after the Job completes. |
 | [A smaller set of privileges](https://kubequest.ramideltoro.com/ckad/least-privilege) | Configuration & Security | 20 | Run UID 1000 with runAsNonRoot and allowPrivilegeEscalation false.; Drop ALL capabilities and disable automountServiceAccountToken.; Set positive CPU/memory requests and limits with requests ≤ limits.; Keep one ready replica and verify UID 1000 in the running container. |
 | [Open the right door](https://kubequest.ramideltoro.com/ckad/open-the-right-door) | Services & Networking | 22 | Select app=little-notes with an ingress NetworkPolicy.; Allow the frontend probe, while the intruder request times out.; Route host notes.quest.test to notes:80 using Ingress.; Verify both permitted Service traffic and the Ingress response. |
+
+## Community exercise library
+
+152 public, self-guided exercises; progress is self-reported. [Library guide](Exercise-library.md). Imported source revision: `d7b9a5c28b2ff2d8a8fab5524569956f21aaa1b4`.
+
+| Topic | Exercises |
+| --- | ---: |
+| [Core concepts](https://kubequest.ramideltoro.com/ckad/exercises?topic=core-concepts) | 18 |
+| [Multi-container Pods](https://kubequest.ramideltoro.com/ckad/exercises?topic=multi-container-pods) | 2 |
+| [Pod design](https://kubequest.ramideltoro.com/ckad/exercises?topic=pod-design) | 52 |
+| [Configuration](https://kubequest.ramideltoro.com/ckad/exercises?topic=configuration) | 30 |
+| [Observability](https://kubequest.ramideltoro.com/ckad/exercises?topic=observability) | 8 |
+| [Services and networking](https://kubequest.ramideltoro.com/ckad/exercises?topic=services-networking) | 10 |
+| [State persistence](https://kubequest.ramideltoro.com/ckad/exercises?topic=state-persistence) | 6 |
+| [Helm](https://kubequest.ramideltoro.com/ckad/exercises?topic=helm) | 10 |
+| [Custom resources](https://kubequest.ramideltoro.com/ckad/exercises?topic=custom-resources) | 4 |
+| [Container images (Podman)](https://kubequest.ramideltoro.com/ckad/exercises?topic=container-images) | 12 |
 
 ## Visual learning library
 
@@ -161,7 +178,9 @@ These are the versions in the deployed application lockfile, not a list of lates
 | lucide-react | 0.468.0 | ^0.468.0 |
 | react | 19.3.0 | ^19.2.0 |
 | react-dom | 19.3.0 | ^19.2.0 |
+| react-markdown | 10.1.0 | ^10.1.0 |
 | react-router-dom | 7.18.4 | ^7.9.0 |
+| remark-gfm | 4.0.1 | ^4.0.1 |
 | ssh2 | 1.17.0 | ^1.17.0 |
 | tsx | 4.23.13 | ^4.20.0 |
 | yaml | 2.9.1 | ^2.8.0 |
