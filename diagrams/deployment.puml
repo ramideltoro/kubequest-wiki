@@ -87,6 +87,10 @@ node "Home AI server" as Host {
  }
  node "QEMU / KVM\n4 vCPU / 8 GiB" as VM {
   node "K3s 1.35.8+k3s1\nTraefik / local-path / network policy" as Cluster
+  artifact "Preloaded images + Helm charts" as Fixtures
+  node "Podman + local practice registries" as Containers
+  Fixtures --> Cluster
+  Containers --> Cluster : local image exercises
  }
  node "Ollama existing service" as AI
  artifact "Root-only runtime.env" as Env

@@ -57,3 +57,7 @@ Follow the [exercise-library provenance and update procedure](Exercise-library.m
 ## Focused guided practice
 
 The [guided curriculum](Guided-practice.md) adds four distinct practice objectives: Kustomize overlays, namespaced RBAC boundaries, startup-probe troubleshooting and JSONPath reporting. It links existing prerequisites instead of duplicating the 152 tasks. The guide documents the overlap audit, pinned MIT/Apache sources, separate local progress, learning sequence and validation limits.
+
+## Runnable exercise recipes
+
+Author each converted task under `scripts/lab-recipes/` with a distinct subtitle/situation, prerequisite setup, executable student solution, observable checks and explanation. Run `npm run labs:build` to regenerate public missions, the small index and private lab definitions. Preserve stable IDs and pin upstream mappings. Every task must start independently, fail at least one initial check, and pass all checks after its solution runs in the isolated QA guest. Record that actual output before producing public videos; never invent terminal output or reuse another task's video as proof. Retain captions, transcripts, source licenses and explicit adaptation notes.

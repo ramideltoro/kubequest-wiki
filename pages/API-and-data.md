@@ -56,3 +56,7 @@ The [public exercise library](Exercise-library.md) uses static imported content 
 ## Focused guided practice
 
 The [guided curriculum](Guided-practice.md) adds four distinct practice objectives: Kustomize overlays, namespaced RBAC boundaries, startup-probe troubleshooting and JSONPath reporting. It links existing prerequisites instead of duplicating the 152 tasks. The guide documents the overlap audit, pinned MIT/Apache sources, separate local progress, learning sequence and validation limits.
+
+## Exercise lab integration
+
+The existing private session APIs now accept the 156 stable converted exercise IDs in addition to the original eight mission IDs. Authentication, origin checks, single-session limits and attempt storage remain unchanged. The YAML apply action uses the mission's declared namespace. Resource snapshots add configuration/security metadata and scheduled-workload metadata without returning Secret contents. Setup and validation scripts stay in the server-side exercise definition file; the public mission JSON contains only instructional content.

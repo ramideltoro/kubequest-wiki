@@ -64,7 +64,11 @@ Theme, footer and documentation updates use the normal CI/browser gate. Changes 
 
 ## Community exercise library
 
-The application suite verifies import freshness, 152 source-linked tasks, code fence handling, MIT notice preservation and safe progress parsing. Browser checks open all 152 solutions, check all on mobile for overflow, audit one solution per topic at two widths, and verify filter, reveal, progress, reload and unknown-route behavior. This validates the reading/practice interface; upstream commands have not all been executed against a cluster. See [the library guide](Exercise-library.md).
+The application suite verifies import freshness, 152 source-linked tasks, 156 executable mission mappings (including four guided additions), source notices, shell syntax, safe progress parsing and public recording integrity. Browser checks visit all 156 converted mission pages at desktop/mobile widths, verify their media, objectives and diagrams, audit representative pages across topics plus every guided addition, and exercise filters, saved progress and unknown routes.
+
+The real-guest runner requires each initial state to fail at least one check, executes the authored solution as student, and records final behavioral checks. Only successful runs can produce videos. `scripts/verify-exercise-recordings.mjs` requires all 156 recordings, exact agreement with the displayed solutions and objectives, and all four public media files. `content/exercise-recordings.json` stores solution and media hashes; CI detects stale or missing walkthroughs.
+
+Template qualification also uses fresh network-isolated VMs through the actual `Lab` controller. `tests/live-exercise-labs.ts` covers selected new setup/tooling boundaries, while the original eight-mission suite checks regressions, accepted alternatives and host/LAN/internet isolation. See [the library guide](Exercise-library.md).
 
 ## Focused guided practice
 

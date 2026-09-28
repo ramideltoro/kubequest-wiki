@@ -48,6 +48,8 @@ The public health endpoint reports release identity, Google configuration and te
 7. Install `infra/deploy-receive.mjs`, `deploy-lock.sh`, `deploy-release.mjs` and `release-format.mjs` as root-owned helper files. Create the dedicated deploy user, restricted authorized key, SSH match rules and narrow sudo entry. Never give the deploy user unrestricted sudo.
 8. Set the four production environment secrets and restrict deployments to `main`. Run the full workflow and confirm public health reports the deployed commit.
 
+`infra/provision-exercise-guest.sh` adds the offline Helm repository, Podman images and local registries used by the exercise labs. Qualify a new template outside the production lab directory with a distinct `LAB_DIR` and `LAB_SSH_PORT`. Power off the builder before flattening its disk. Before activation, finish or retire all QA overlays that still depend on the old base, take the deployment lock, set the maintenance marker and verify the owner session is idle. Preserve the old standalone template for recovery, then atomically replace the base. Never replace an in-use backing image.
+
 Template rebuilds require a matching known-hosts record. Do not disable SSH host verification to hide a mismatch. A template change should rerun all mission behavior and isolation tests.
 
 ## Backups and restore

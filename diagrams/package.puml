@@ -86,6 +86,9 @@ UI --> Content : lazy-load solutions / guided curriculum
 package "reviewed MIT / Apache practice sources" as PracticeSources
 Content ..> PracticeSources : four adapted gap lessons / pinned attribution
 Tests --> Content : prerequisite / index / lesson checks
+Scripts --> Content : build 156 exercise mission definitions
+Server --> Content : validate all 164 lab IDs
+Scripts --> Assets : qualified MP4 / VTT / transcripts
 UI ..> Wiki : external documentation link
 UI --> Assets : local artwork / videos
 Server --> Content : known missions / solutions

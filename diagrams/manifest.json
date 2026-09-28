@@ -34,9 +34,9 @@
     },
     {
       "source": "deployment.puml",
-      "sourceSha256": "a11c7f0c984fed19745c5fa9ce52d8e9b9089575f24b40194cf80d9e05947855",
+      "sourceSha256": "eab78fa7a9f4bfaeeea9d7e2b1c7a34d26fc6f21052ba8acf966948cd92e9a75",
       "svg": "deployment.svg",
-      "svgSha256": "723354c97ba8791661bcacb81334fa6c6ce42191f39c2e1e5cfce839077d111c"
+      "svgSha256": "9ee5f9266a5ced839cb6638a801b8a25e83bcab23616346d335dd130e51dc0c7"
     },
     {
       "source": "interaction-overview.puml",
@@ -52,9 +52,9 @@
     },
     {
       "source": "package.puml",
-      "sourceSha256": "e4f7cf0e4f1536f508c150db247b9580b7f1d9ec01124e8c7751e18a53837b50",
+      "sourceSha256": "ab325db9b53efe5f76d9cc09a535e50d3878dba12d6e79b78c631abda1e65c75",
       "svg": "package.svg",
-      "svgSha256": "1535bc0a1dea4c9f6a9a45f4c62786b76b90ca906e9b5fa91e25d860253aa754"
+      "svgSha256": "ef10bf74ec4aea819e83881504078572ceac8a2d5511f7f7b1c4450cb9deca59"
     },
     {
       "source": "profile.puml",

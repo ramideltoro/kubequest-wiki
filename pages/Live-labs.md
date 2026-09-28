@@ -35,3 +35,9 @@ Normal CI/CD deployment first creates a maintenance marker to block new starts, 
 ## Images and storage
 
 Application images, ingress, storage helpers and system components are preloaded. External image pulls are unavailable during practice. The Jobs/storage mission uses the guest's local-path provisioner, so data persists across Pod replacement within that VM. A lab reset destroys the entire overlay, including this practice storage.
+
+## Converted exercise scenarios
+
+The expanded template supports 156 additional exercise scenarios alongside the original eight missions. It includes preloaded historical/current images, Helm, Podman, jq, a local chart repository and two local registry fixtures. Registry credentials and TLS keys are disposable practice data. Podman privilege is confined to the VM, which remains blocked from initiating host, LAN or internet connections. The backend still permits only one active owner lab.
+
+Each exercise supplies its own starting state and authored checks. Template qualification uses a separate guest on host-loopback SSH port 22241; production remains on 22240. Never replace a template while an overlay using it is active. Preserve the previous template, take the deployment lock, block new starts, verify the session is idle, and activate the new immutable template atomically. Rerun original mission and isolation tests before deployment.

@@ -1,50 +1,52 @@
-# Community exercise library
+# Exercise missions and labs
 
-[Open the library](https://kubequest.ramideltoro.com/ckad/exercises) · [Original CKAD-exercises project](https://github.com/dgkanatsios/CKAD-exercises)
+[Open the library](https://kubequest.ramideltoro.com/ckad/exercises)
 
-The public library adds 152 self-guided exercises and their solutions to CKAD Practice. Visitors can search question text, context and solutions, filter by topic or practice status, reveal a solution, and move through a topic in source order. The CKAD catalog, footer search, Readme and My Progress link to the library. No sign-in is needed.
+All 152 imported CKAD exercises now use the same mission format as the eight original incident missions. The four guided curriculum additions use it too, giving 156 converted practice labs and 164 labs in total. Each converted exercise keeps its stable URL and source attribution, and adds a short title, subtitle, situation, objectives, interactive relationship diagram, comparison view, graded lab and captioned solution recording with transcript.
 
-| Topic | Exercises |
-| --- | ---: |
-| Core concepts | 18 |
-| Multi-container Pods | 2 |
-| Pod design | 52 |
-| Configuration | 30 |
-| Observability | 8 |
-| Services and networking | 10 |
-| State persistence | 6 |
-| Helm | 10 |
-| Custom resources | 4 |
-| Container images (Podman) | 12 |
+## Public reading and private practice
 
-## Practice behavior
+Mission pages, diagrams, solution videos, captions and transcripts are public. Running a lab still requires the authorized Google identity; anonymous APIs and terminal/resource WebSockets remain closed. A visitor can study a walkthrough without signing in, while signed-in practice uses the existing terminal, YAML editor, live resource view, hints, tutor and guided/independent/timed modes.
 
-Use a disposable environment of your own. These reference tasks do not provision the owner-only VM, execute commands, call the tutor, or award authored grades. Some tasks need Helm, Podman, a registry or cluster-admin permissions. Follow source order because tasks can reuse resources created earlier. The existing eight graded missions and their access controls remain separate.
+The original ten topic groups and 152 stable exercise IDs remain intact. Search and topic/status filters continue to work. The library shows the authored mission title and subtitle rather than using a long upstream instruction as its headline. Original wording is available through each mission's pinned source link. The separate four-lesson curriculum retains its existing routes.
 
-Solutions are hidden until the visitor selects **Reveal solution**. Each exercise links to the exact source file and line at the imported commit. Topic notes retain documentation breadcrumbs and supporting information. Upstream commands, versions and repository assumptions are preserved, so learners may need to adapt older examples. The source's historical topic percentages do not appear as current exam weights. The library does not claim complete exam coverage or provide an official mock exam.
+## Independent starting states
 
-An experienced learner can use the expandable preparation guide's 20–30 hour estimate, with a suggested 25-hour split between assessment, review, drills and timed practice. This is an adjustable planning estimate, not a certification requirement.
+Every converted exercise has its own setup script. A task that previously depended on earlier exercises now receives the required Pods, Deployments, files, credentials or release history automatically. Learners do not have to complete earlier tasks to make a lab runnable. Namespace and workspace requirements are shown on the mission page. Files requested by a task belong in `/home/student` inside the disposable VM.
 
-## Local progress and routes
+Some historical tasks were adapted for reliable execution:
 
-`/ckad/exercises` is the catalog. Query parameters `q`, `topic` and `status` preserve filters in shareable URLs. `/ckad/exercises/:id` is a task; unknown IDs display an exercise-not-found page.
+- Outdated external chart repositories are replaced with a bundled web chart and local Helm repository. Repository management, values inspection, install and upgrade skills remain the objective.
+- Podman uses preloaded images and local HTTP/authenticated TLS registry fixtures. Only artificial practice credentials are used.
+- Environment-specific node names are discovered from the actual single-node guest.
+- Tasks that originally deleted their result immediately keep resources until grading when necessary; stopping the lab removes the environment.
+- Inspection tasks save requested evidence to a file so the checker can evaluate the result.
+- Short demonstration delays are documented in the situation where they replace longer waits.
 
-The separate `kubequest-exercises-v1` localStorage record maps exercise IDs to `practiced` or `review`. An absent entry means not started. The buttons toggle the selected status, and practiced/review are mutually exclusive. My Progress shows the practiced count and links to the review list. This is self-reported practice, never an exam score or a lab result. Reloads and same-origin tabs restore updates; clearing browser storage clears this history. If storage is blocked, the page reports that saving failed rather than claiming success. Malformed records, unknown IDs and invalid statuses are ignored. No new private API, database table or authentication capability is introduced.
+A lab can legitimately expect failure: a quota rejection, a nonexistent image or a deadline-exceeded Job. The situation explicitly states the intended outcome. Initial state must not pass every check; the recorded solution must satisfy every check.
 
-## Provenance and maintenance
+## Lab runtime and checks
 
-The initial snapshot is commit `d7b9a5c28b2ff2d8a8fab5524569956f21aaa1b4`, imported on 2026-09-27, from `dgkanatsios/CKAD-exercises`. Copyright (c) 2018 Dimitris-Ilias Gkanatsios. The complete MIT license is stored with the source and published at [the license URL](https://kubequest.ramideltoro.com/licenses/ckad-exercises.txt); visible attribution names the author and contributors.
+`content/exercise-missions.json` holds public mission descriptions and diagrams; `content/exercise-mission-index.json` is the smaller navigation/search index. `server/exercise-labs.json` holds setup and check commands. Authored recipe modules under `scripts/lab-recipes/` generate these files through `npm run labs:build`. CI verifies generated files are current and that every source exercise and guided lesson has exactly one definition.
 
-The application keeps unmodified Markdown under `content/ckad-upstream/` and provenance in `source.json`. `scripts/import-ckad-exercises.mjs` produces `content/ckad-exercises.json` and the smaller `content/ckad-index.json`. It recognizes headings outside fenced code, preserves code blocks and documentation context, extracts collapsible solutions, removes presentation wrappers and tracking pixels, and rejects missing solutions or duplicate IDs. Exercise IDs combine topic and a hash of the original question title. Reordering tasks does not reset history; a changed title deliberately creates a new ID. Review renamed questions before an update if progress migration is needed.
+`content/mission-catalog.ts` combines the eight original missions with the converted labs for backend validation and mission rendering. The original incident catalog remains compact; converted labs are found through the exercise library and guided curriculum. Existing private attempt history records stable exercise IDs, and My Progress resolves their titles.
 
-To update, choose and review an upstream commit; copy all ten topic files, README and license; update provenance; run `npm run exercises:import`; review the generated diff and all changed commands. The importer does not silently refresh over the network. Do not relabel historical curriculum percentages as current exam weights. Update these docs and `wiki-review.json` before application deployment.
+The backend prepares the scenario only after the VM and Kubernetes are ready. Converted scenarios require the expanded template fixture marker. Checks execute trusted authored commands against live cluster state, workload behavior or requested workspace files. Command failures yield failed checks rather than success. Learner terminal text and tutor output cannot directly award a passing result.
 
-Markdown renders through `react-markdown` and `remark-gfm` with raw HTML disabled; no raw-HTML execution plugin is installed. Solutions and their renderer are loaded with the exercise route rather than the initial page bundle. The global search uses the smaller index. The snapshot remains local, so exercise reading does not depend on GitHub availability.
+Live resource snapshots include the original workload resources plus configuration objects, ServiceAccounts, Roles/bindings, quotas, LimitRanges, CronJobs and HPAs. Only selected metadata/status is returned; Secret values are not included. Teaching diagrams remain labeled illustrations, distinct from observed live resources.
 
-## Verification
+## Videos and evidence
 
-`npm test` checks regeneration freshness, all 152 source locations, topic counts, license preservation, fenced-code parsing and corrupt progress recovery. `scripts/exercise-checks.mjs`, included in `npm run test:browser`, opens every task and solution, checks every solution for mobile overflow, and audits the library plus one solution per topic for WCAG violations at desktop/mobile sizes. It also verifies filtering, empty/unknown states, solution disclosure, reload persistence and My Progress integration. These checks validate content delivery and UI behavior; they do not claim every historical upstream command has been executed against Kubernetes.
+Public MP4, WebVTT, poster images and text transcripts live under `/demos/<stable-id>.*`. Recordings are condensed replays of commands and output captured in the dedicated disposable QA VM. The renderer accepts only completed runs whose checks all pass. It includes the task-specific explanation and links a full transcript when video frames excerpt output. Real production credentials and infrastructure state must never appear in these artifacts. `scripts/verify-exercise-recordings.mjs` checks the complete set and writes solution/media hashes to `content/exercise-recordings.json`; CI rejects stale or missing assets.
 
-## Focused guided practice
+Use `scripts/exercise-live-check.mjs` only with the dedicated `exercise-qa` VM. It rejects the production lab directory. The runner resets practice state, checks that the starting scenario is incomplete, runs the authored solution as the student and captures final checks. Its cleanup operates solely inside that dedicated guest. Qualification artifacts must match the final authored solution before rendering.
 
-The [guided curriculum](Guided-practice.md) adds four distinct practice objectives: Kustomize overlays, namespaced RBAC boundaries, startup-probe troubleshooting and JSONPath reporting. It links existing prerequisites instead of duplicating the 152 tasks. The guide documents the overlap audit, pinned MIT/Apache sources, separate local progress, learning sequence and validation limits.
+## Progress and provenance
+
+`kubequest-exercises-v1` and `kubequest-curriculum-v1` remain separate device-local practiced/review records. They survive the conversion because IDs do not change. These self-reported records are displayed separately from signed-in lab grades stored by the server. Resetting a practice record does not delete private attempts.
+
+The original 152 tasks come from MIT-licensed `dgkanatsios/CKAD-exercises`, revision `d7b9a5c28b2ff2d8a8fab5524569956f21aaa1b4`. The unmodified snapshot remains in `content/ckad-upstream/`. Converted mission pages link the original question and retain the full MIT notice at `/licenses/ckad-exercises.txt`. The four additional lessons preserve their pinned MIT/Apache-2.0 source references, licenses and modification notes described in [Guided practice](Guided-practice.md).
+
+## Validation
+
+Content checks cover complete source-to-lab mapping, unique IDs, generated-file freshness, source/license links, complete diagrams and shell syntax. Backend tests verify that command errors cannot produce passing exercise checks. Browser checks visit all 156 converted pages at desktop/mobile widths, verify public media and transcripts, inspect objectives and diagrams, exercise local progress and filters, and audit representative pages across topics plus every guided lesson for accessibility. Real-cluster qualification and the original eight-mission suite are required when the expanded VM template or execution engine changes.

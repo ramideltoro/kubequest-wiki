@@ -36,10 +36,17 @@ for (const m of s.missions)
   text += `| [${safe(m.title)}](https://kubequest.ramideltoro.com/ckad/${m.id}) | ${safe(m.domain)} | ${m.minutes} | ${m.objectives.map(safe).join("; ")} |\n`;
 if (s.exerciseLibrary) {
   const library = s.exerciseLibrary;
-  text += "\n## Community exercise library\n\n" + library.count + " public, self-guided exercises; progress is self-reported. [Library guide](Exercise-library.md). Imported source revision: \x60" + safe(library.source.revision) + "\x60.\n\n| Topic | Exercises |\n| --- | ---: |\n";
+  text += "\n## Community exercise library\n\n" + library.count + (s.exerciseLabs?.length ? " public exercise missions with signed-in graded labs; browser practice notes remain self-reported. " : " public, self-guided exercises; progress is self-reported. ") + "[Library guide](Exercise-library.md). Imported source revision: \x60" + safe(library.source.revision) + "\x60.\n\n| Topic | Exercises |\n| --- | ---: |\n";
   for (const topic of library.topics) {
     if (!/^[a-z0-9-]+$/.test(topic.id)) throw Error("Invalid exercise topic");
     text += "| [" + safe(topic.title) + "](https://kubequest.ramideltoro.com/ckad/exercises?topic=" + topic.id + ") | " + topic.count + " |\n";
+  }
+}
+if (s.exerciseLabs?.length) {
+  text += "\n## Exercise and guided labs\n\nPublic situations, diagrams, solutions and captioned walkthroughs. Running a disposable lab requires authorized sign-in.\n\n| Lab | Topic | Objectives |\n| --- | --- | --- |\n";
+  for (const m of s.exerciseLabs) {
+    if (!/^\/ckad\/(exercises|curriculum)\/[a-z0-9-]+$/.test(m.path)) throw Error("Invalid lab route");
+    text += "| [" + safe(m.title) + "](https://kubequest.ramideltoro.com" + m.path + ") | " + safe(m.domain) + " | " + m.objectives.map(safe).join("; ") + " |\n";
   }
 }
 if (s.visuals?.length) {

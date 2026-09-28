@@ -2,7 +2,7 @@
 
 [Open guided practice](https://kubequest.ramideltoro.com/ckad/curriculum)
 
-Four public lessons supplement the existing 152 community exercises. Each follows concept, worked example, guided practice, independent challenge, verification, and an explained solution. Two optional hints precede the hidden solution. The estimated total is 105 minutes, adjustable to the learner. There is no timer, mock exam, automatic execution, or grading. Use a disposable practice environment; requirements and cleanup appear in each lesson.
+Four public lessons supplement the existing 152 community exercises. Each now uses the shared mission interface: subtitle, situation, objectives, interactive diagram, three progressive hints, an independently prepared lab, behavioral checks, and an explained solution. Captioned solution videos and transcripts are public. Running a lab requires authorized sign-in; sessions support guided, independent and timed modes.
 
 ## Scope and overlap review
 
@@ -26,16 +26,18 @@ The authored curriculum rewrites and extends selected ideas rather than mirrorin
 
 ## Routes, data and progress
 
-`/ckad/curriculum` lists the four lessons in suggested order. `/ckad/curriculum/:id` renders a lesson or a not-found state. The CKAD catalog, exercise library, global search and My Progress link here. Previous/next navigation resets solution visibility and feedback for the next lesson.
+`/ckad/curriculum` lists the four lessons in suggested order. `/ckad/curriculum/:id` renders a lesson or a not-found state. The CKAD catalog, exercise library, global search and My Progress link here. The mission page links back to the curriculum catalog.
 
-`content/ckad-curriculum.json` holds the full lessons. `content/ckad-curriculum-index.json` holds small search metadata; tests check exact agreement. The full content and Markdown renderer load on demand. Raw HTML is disabled, and code blocks are keyboard-scrollable.
+`content/ckad-curriculum.json` holds the full lessons. `content/ckad-curriculum-index.json` holds small search metadata; tests check exact agreement. The executable mission definitions live in `content/exercise-missions.json`; the shared mission page loads on demand. Code blocks are keyboard-scrollable.
 
-`kubequest-curriculum-v1` stores practiced/review status by stable lesson ID on the current browser. Progress is separate from community exercises, foundation/basic completion and private lab grades. The catalog shows practiced totals. Reset removes one lesson's entry. Unknown IDs, invalid states and malformed data are discarded. Storage failures display an error. No database, new server endpoint or authentication change is involved.
+`kubequest-curriculum-v1` stores practiced/review status by stable lesson ID on the current browser. Progress is separate from community exercises, foundation/basic completion and private lab grades. The catalog shows practiced totals. Reset removes one lesson's entry. Unknown IDs, invalid states and malformed data are discarded. Storage failures display an error. Real lab attempts use the existing private database and owner-only endpoints; local practice notes remain independent.
 
 ## Validation and maintenance
 
-The content tests validate stable IDs, prerequisites, matching search index, pinned source links, license files, required learning sections, startup manifest structure and corrupt progress recovery. The browser suite checks all four lessons at desktop/mobile widths, WCAG accessibility, overflow, hints, hidden solutions, navigation, search and persisted/reset progress. Existing exercise and mission suites remain required.
+The content tests validate stable IDs, prerequisites, matching search index, pinned source links, license files, required learning sections, startup manifest structure and corrupt progress recovery. The browser suite checks all four lessons at desktop/mobile widths, WCAG accessibility, overflow, hints, public solutions, navigation, search and persisted/reset progress. Existing exercise and mission suites remain required.
 
-The Kustomize example and independent solution are rendered with kubectl 1.35.0 and checked for the exact names, replicas and images. Cluster-dependent RBAC and probe commands are reviewed against official documentation but are not automatically run or graded by the site. UI/schema checks do not establish runtime success on every learner's cluster.
+The Kustomize example and independent solution are rendered with kubectl 1.35.0 and checked for the exact names, replicas and images. The executable RBAC, startup-probe and reporting scenarios are qualified in disposable Kubernetes guests, including failing initial checks and successful solution checks. Solution recordings come from those actual runs.
 
 For future additions, compare learning objectives with existing exercises and missions before authoring. Link prerequisites rather than restating them. Preserve source licenses, pinned revisions and modification notes; review commands against supported Kubernetes APIs. Update both content/index files, tests, this overlap table and relevant UML before deployment.
+
+See [Exercise missions and labs](Exercise-library.md) for recipe authoring, runtime fixtures and the qualification process.
