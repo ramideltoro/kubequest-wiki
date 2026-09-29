@@ -49,3 +49,7 @@ Coach responses stream as plain text with a separate status announcement, elapse
 Automated Chromium checks exercise public pages at 390, 768 and 1440 pixels, detect horizontal overflow, run axe WCAG A/AA checks, complete all thirty lessons, restore saved progress and operate footer controls. These checks catch many regressions but do not establish complete accessibility conformance. Manual assistive-technology testing remains valuable, especially for the desktop-focused terminal/editor workspace.
 
 ![Composite-structure diagram: live-practice workspace parts and their API/WebSocket connections](diagrams/composite-structure.svg)
+
+## Lab source attribution
+
+Exercise and guided-lab source references share the mission sidebar's visual hierarchy: a subtle divider, a small uppercase heading, 12px muted explanatory text, and amber underlined links. The full original exercise title, adaptation note, and license remain visible to all visitors. Long titles wrap within the sidebar on desktop and mobile, and source links have an amber keyboard-focus outline.

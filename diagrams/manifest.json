@@ -28,9 +28,9 @@
     },
     {
       "source": "composite-structure.puml",
-      "sourceSha256": "ffad81a3f71e1854364c4d798cd6e7d7d25e435f882a290275c7e74b05df8d66",
+      "sourceSha256": "dd8245921460ba9802dd35c2a314218c5611c87a27c8ec8f86c961f2081360b9",
       "svg": "composite-structure.svg",
-      "svgSha256": "135d0184773907e1d07ce84ef49dccf65158f9550dd905345687fb0daec298bc"
+      "svgSha256": "fbbd5680d4a97c5b3fc218158b8cc9a009c23bc292ca5d6feb39d36d43c5c149"
     },
     {
       "source": "deployment.puml",

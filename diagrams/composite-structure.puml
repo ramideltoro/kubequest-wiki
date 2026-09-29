@@ -71,6 +71,8 @@ skinparam activityEndColor #F3BD62
 title KubeQuest - parts of a live-practice workspace
 rectangle "MissionPage : browser workspace" {
  rectangle "mission : reviewed brief" as Brief
+ rectangle "source : public attribution" as Source
+ Brief *-- Source : muted sidebar reference\noriginal exercise + adaptation + license
  rectangle "terminal : LiveTerminal" as Terminal
  rectangle "editor : YamlEditor" as Editor
  rectangle "diagram : resource display" as Diagram
