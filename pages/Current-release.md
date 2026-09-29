@@ -2,11 +2,11 @@
 
 This page is generated from the exact KubeQuest commit deployed to the server. It updates automatically after releases and rollbacks. Authored explanations remain in the other chapters.
 
-- **Application commit:** [29775ec](https://github.com/ramideltoro/kubequest/commit/29775ecb4946921693d81572d439c80d79e64f92)
-- **Commit date:** 2026-09-28T17:30:24-04:00
-- **Change:** Convert all CKAD exercises into mission labs with public walkthroughs (#10)
+- **Application commit:** [6dd08c0](https://github.com/ramideltoro/kubequest/commit/6dd08c075d0482e86456583351d5c7fbd9497093)
+- **Commit date:** 2026-09-28T21:31:58-04:00
+- **Change:** Match lab source attribution to mission sidebar theme (#11)
 - **Portal:** [Open KubeQuest](https://kubequest.ramideltoro.com)
-- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/36486545198)
+- **Release pipeline:** [GitHub Actions](https://github.com/ramideltoro/kubequest/actions/runs/36508352716)
 
 ## Before Kubernetes
 

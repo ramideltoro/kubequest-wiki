@@ -1,9 +1,10 @@
 # Release history
 
-The current live application is [29775ec](https://github.com/ramideltoro/kubequest/commit/29775ecb4946921693d81572d439c80d79e64f92). This history records source revisions published through the release integration. Rollback changes the current reference; earlier records remain available.
+The current live application is [6dd08c0](https://github.com/ramideltoro/kubequest/commit/6dd08c075d0482e86456583351d5c7fbd9497093). This history records source revisions published through the release integration. Rollback changes the current reference; earlier records remain available.
 
 | Commit | Commit date | Change | Pipeline |
 | --- | --- | --- | --- |
+| [6dd08c0](https://github.com/ramideltoro/kubequest/commit/6dd08c075d0482e86456583351d5c7fbd9497093) | 2026-09-28T21:31:58-04:00 | Match lab source attribution to mission sidebar theme (#11) | [Run](https://github.com/ramideltoro/kubequest/actions/runs/36508352716) |
 | [29775ec](https://github.com/ramideltoro/kubequest/commit/29775ecb4946921693d81572d439c80d79e64f92) | 2026-09-28T17:30:24-04:00 | Convert all CKAD exercises into mission labs with public walkthroughs (#10) | [Run](https://github.com/ramideltoro/kubequest/actions/runs/36486545198) |
 | [030d733](https://github.com/ramideltoro/kubequest/commit/030d73380b84b8da263ed69c1e26a85f5b44834d) | 2026-09-27T21:32:13-04:00 | Add four guided CKAD lessons that fill existing practice gaps (#9) | [Run](https://github.com/ramideltoro/kubequest/actions/runs/36366345268) |
 | [1d05083](https://github.com/ramideltoro/kubequest/commit/1d0508321869a56684050c207e7d86eeaf9bc511) | 2026-09-27T20:29:37-04:00 | Add 152 community CKAD exercises with solutions and local progress | [Run](https://github.com/ramideltoro/kubequest/actions/runs/36362471361) |
